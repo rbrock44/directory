@@ -21,37 +21,37 @@ export class AppComponent {
     {
       name: 'Home Page',
       link: `${this.baseGithub}home-page/`,
-      description: ''
+      description: 'Quick access to information Ryan wants'
     },
     {
       name: 'Family Recipes',
       link: `${this.baseGithub}family-recipes/`,
-      description: 'Holds all family recipes'
+      description: 'Quick access to the family\'s recipes'
     },
     {
       name: 'Cleaning Schedule',
       link: `${this.baseGithub}cleaning-schedule/`,
-      description: 'Used to help keep track of people\'s upcoming cleaning schedule'
+      description: 'Used to help keep track of people\'s cleaning schedule'
     },
     {
       name: 'Scorekeeping By Rounds',
       link: `${this.baseGithub}scorekeeping-by-rounds/`,
-      description: ''
+      description: 'Helps manage a game where teams/players keep score over multiple rounds'
     },
     {
       name: '1705 David',
       link: `${this.baseGithub}1705-David/`,
-      description: ''
+      description: 'A place to showcase the first rent house'
     },
     {
       name: 'Auction Advisor',
       link: `${this.baseGithub}auction-advisor/`,
-      description: ''
+      description: 'Helps manage an in person silent auction'
     },
     {
       name: 'Email Link Generator',
       link: `${this.baseGithub}email-link-generator/`,
-      description: ''
+      description: 'Helps create email links with correct fields'
     }
   ];
 
