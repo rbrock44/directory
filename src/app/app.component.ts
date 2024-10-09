@@ -24,6 +24,11 @@ export class AppComponent {
       description: 'Quick access to information Ryan wants'
     },
     {
+      name: 'Drive Status',
+      link: `${this.baseGithub}drive-status/`,
+      description: 'Quick access to drive connection statuses'
+    },
+    {
       name: 'Family Recipes',
       link: `${this.baseGithub}family-recipes/`,
       description: 'Quick access to the family\'s recipes'
