@@ -34,6 +34,11 @@ export class AppComponent {
       description: 'Quick access to the family\'s recipes'
     },
     {
+      name: 'Flash Cards',
+      link: `${this.baseGithub}flash-cards/`,
+      description: 'Flash cards to help study'
+    },
+    {
       name: 'Cleaning Schedule',
       link: `${this.baseGithub}cleaning-schedule/`,
       description: 'Used to help keep track of people\'s cleaning schedule'
