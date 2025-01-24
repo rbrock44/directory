@@ -20,50 +20,54 @@ export class AppComponent {
   applications = [
     {
       name: 'Home Page',
-      link: `${this.baseGithub}home-page/`,
+      link: this.createLink('home-page'),
       description: 'Quick access to information Ryan wants'
     },
     {
       name: 'Drive Status',
-      link: `${this.baseGithub}drive-status/`,
+      link: this.createLink('drive-status'),
       description: 'Quick access to drive connection statuses'
     },
     {
       name: 'Family Recipes',
-      link: `${this.baseGithub}family-recipes/`,
+      link: this.createLink('family-recipes'),
       description: 'Quick access to the family\'s recipes'
     },
     {
       name: 'Flash Cards',
-      link: `${this.baseGithub}flash-cards/`,
+      link: this.createLink('flash-cards'),
       description: 'Flash cards to help study'
     },
     {
       name: 'Cleaning Schedule',
-      link: `${this.baseGithub}cleaning-schedule/`,
+      link: this.createLink('cleaning-schedule'),
       description: 'Used to help keep track of people\'s cleaning schedule'
     },
     {
       name: 'Scorekeeping By Rounds',
-      link: `${this.baseGithub}scorekeeping-by-rounds/`,
+      link: this.createLink('scorekeeping-by-rounds'),
       description: 'Helps manage a game where teams/players keep score over multiple rounds'
     },
     {
       name: '1705 David',
-      link: `${this.baseGithub}1705-David/`,
+      link: this.createLink('1705-David'),
       description: 'A place to showcase the first rent house'
     },
     {
       name: 'Auction Advisor',
-      link: `${this.baseGithub}auction-advisor/`,
+      link: this.createLink('auction-advisor'),
       description: 'Helps manage an in person silent auction'
     },
     {
       name: 'Email Link Generator',
-      link: `${this.baseGithub}email-link-generator/`,
+      link: this.createLink('email-link-generator'),
       description: 'Helps create email links with correct fields'
     }
   ];
+
+  createLink(name: string): string {
+    return `https://${name}.ryan-brock.com/`
+  }
 
   toggleDescription(app: any, event: Event) {
     const target = event.target as HTMLElement;
