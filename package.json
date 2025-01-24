@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:directory": "node dist/directory/server/server.mjs",
     "gh-pages": "gh-pages -d dist/directory/browser",
-    "deploy": "ng build --base-href=https://rbrock44.github.io/directory/",
+    "deploy": "ng build --base-href=https://directory.ryan-brock.com",
     "prod": "npm run deploy && npm run gh-pages"
   },
   "private": true,
