@@ -26,12 +26,12 @@ export class AppComponent {
     {
       name: 'Drive Status',
       link: this.createLink('drive-status'),
-      description: 'Quick access to drive connection statuses'
+      description: 'OpenMediaVault drive connection statuses'
     },
     {
       name: 'Family Recipes',
       link: this.createLink('family-recipes'),
-      description: 'Quick access to the family\'s recipes'
+      description: 'All the family\'s recipes (and more)'
     },
     {
       name: 'Flash Cards',
@@ -51,7 +51,7 @@ export class AppComponent {
     {
       name: '1705 David',
       link: this.createLink('1705-David'),
-      description: 'A place to showcase the first rent house'
+      description: 'A place to showcase a rent house'
     },
     {
       name: 'Auction Advisor',
@@ -61,7 +61,7 @@ export class AppComponent {
     {
       name: 'Email Link Generator',
       link: this.createLink('email-link-generator'),
-      description: 'Helps create email links with correct fields'
+      description: 'Helps create email links with parameters (fields)'
     }
   ];
 
