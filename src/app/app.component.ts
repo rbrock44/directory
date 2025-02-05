@@ -24,6 +24,11 @@ export class AppComponent {
       description: 'Quick access to information Ryan wants'
     },
     {
+      name: 'Woodworking Projects',
+      link: this.createLink('woodworking-projects'),
+      description: 'Shows off the woodworking projects'
+    },
+    {
       name: 'Drive Status',
       link: this.createLink('drive-status'),
       description: 'OpenMediaVault drive connection statuses'
