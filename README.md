@@ -1,5 +1,8 @@
 # Directory
 
+This server side angular web application was created to host links and descriptions to the other software creations I've made available to the public.<br/>
+[Live URL](https://directory.ryan-brock.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
 
 ## Development server
