@@ -103,11 +103,30 @@
 
       <p *ngIf="false" class="description">Here are some links to my other websites and applications. Click on any of them to explore!</p>
 
+      <div class="social-links-container">
+        <div class="social-links-row">
+          <a [href]="this.githubUrl" class="social-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span class="link-text">GitHub</span>
+          </a>
+
+          <a [href]="this.linkedinUrl" class="social-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+            <span class="link-text">LinkedIn</span>
+          </a>
+
+          <a [href]="this.coffeeUrl" class="social-link" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-coffee"></i>
+            <span class="link-text">Buy me a coffee</span>
+          </a>
+        </div>
+      </div>
+
       <div class="links-section">
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let app of applications; let i = index" (click)="toggleDescription(i, $event)">
+            <li class="list-group-item" *ngFor="let app of this.applications; let i = index" (click)="this.toggleDescription(i, $event)">
               <a href="{{app.link}}" target="_blank">{{app.name}}</a>
-              <p *ngIf="selectedApp === i && app.description != ''" class="description">{{app.description}}</p>
+              <p *ngIf="this.selectedApp === i && app.description != ''" class="description">{{app.description}}</p>
             </li>
         </ul>
       </div>

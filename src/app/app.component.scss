@@ -51,3 +51,54 @@
 .description {
 
 }
+
+.social-links-container {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  .link-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-links-row {
+    gap: 1rem;
+  }
+
+  .social-link {
+    padding: 0.5rem;
+
+    .link-text {
+      display: none;
+    }
+  }
+}

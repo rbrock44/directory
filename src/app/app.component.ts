@@ -15,6 +15,9 @@ import {CommonModule} from "@angular/common";
 export class AppComponent {
   title = 'directory';
   baseGithub = 'https://rbrock44.github.io/';
+  githubUrl: string = 'https://github.com/rbrock44';
+  linkedinUrl: string = 'https://www.linkedin.com/in/ryan-brock-4b8123262/';
+  coffeeUrl: string = 'https://buymeacoffee.com/rbrock';
   selectedApp = undefined;
 
   applications = [
