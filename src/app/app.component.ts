@@ -42,6 +42,11 @@ export class AppComponent {
       description: 'All the family\'s recipes (and more)'
     },
     {
+      name: 'Compare Achievements',
+      link: this.createLink('compare-achievements'),
+      description: 'Compare achievements across multiple platforms and users with ease'
+    },
+    {
       name: 'Flash Cards',
       link: this.createLink('flash-cards'),
       description: 'Flash cards to help study'
