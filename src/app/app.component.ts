@@ -42,6 +42,11 @@ export class AppComponent {
       description: 'All the family\'s recipes (and more)'
     },
     {
+      name: 'Add Recipe',
+      link: this.createLink('add-recipe'),
+      description: 'A user friendly place to turn a recipe into JSON format for the family recipe website'
+    },
+    {
       name: 'Compare Achievements',
       link: this.createLink('compare-achievements'),
       description: 'Compare achievements across multiple platforms and users with ease'
