@@ -67,7 +67,6 @@ ${n.map((r,o)=>`${o+1}) ${r.toString()}`).join(`
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
   }
 
   .content[_ngcontent-%COMP%] {
