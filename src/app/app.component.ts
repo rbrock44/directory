@@ -31,11 +31,11 @@ export class AppComponent {
       link: this.createLink('woodworking-projects'),
       description: 'Shows off the woodworking projects'
     },
-    {
-      name: 'Drive Status',
-      link: this.createLink('drive-status'),
-      description: 'OpenMediaVault drive connection statuses'
-    },
+    // {
+    //   name: 'Drive Status',
+    //   link: this.createLink('drive-status'),
+    //   description: 'OpenMediaVault drive connection statuses'
+    // },
     {
       name: 'Family Recipes',
       link: this.createLink('family-recipes'),
