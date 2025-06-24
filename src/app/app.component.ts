@@ -47,7 +47,12 @@ export class AppComponent {
       description: 'A user friendly place to turn a recipe into JSON format for the family recipe website'
     },
     {
-      name: 'Compare Achievements',
+      name: 'Connect 4 [WIP]',
+      link: this.createLink('connect-4'),
+      description: 'Play Connect 4 against various AI difficulties to have some fun and increase skill'
+    },
+    {
+      name: 'Compare Achievements [WIP]',
       link: this.createLink('compare-achievements'),
       description: 'Compare achievements across multiple platforms and users with ease'
     },
