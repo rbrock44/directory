@@ -85,6 +85,11 @@ export class AppComponent {
       name: 'Email Link Generator',
       link: this.createLink('email-link-generator'),
       description: 'Helps create email links with parameters (fields)'
+    },
+    {
+      name: 'Lost?',
+      link: this.createLink('lost'),
+      description: 'A simple lost/redirection webpage for all unknown routes on my domain'
     }
   ];
 
