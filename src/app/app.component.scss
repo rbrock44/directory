@@ -56,11 +56,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
 }
 
 .arrow {
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .social-links-container {
