@@ -131,7 +131,9 @@
             
             <div class="item-header">
               <a href="{{ app.link }}" target="_blank">{{ app.name }}</a>
-              <span class="arrow">&#9654;</span> <!-- Unicode right arrow ▶ -->
+              <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
             </div>
             
             <p *ngIf="selectedApp === i && app.description" class="description">
