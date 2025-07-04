@@ -48,6 +48,21 @@
   color: #0056b3;
 }
 
+.list-group-item.expanded .arrow {
+  transform: rotate(90deg); /* Rotates right arrow down */
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
 .social-links-container {
   width: 100%;
   display: flex;
