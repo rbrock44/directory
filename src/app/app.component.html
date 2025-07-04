@@ -124,12 +124,23 @@
 
       <div class="links-section">
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let app of this.applications; let i = index" (click)="this.toggleDescription(i, $event)">
-              <a href="{{app.link}}" target="_blank">{{app.name}}</a>
-              <p *ngIf="this.selectedApp === i && app.description != ''" class="description">{{app.description}}</p>
-            </li>
+          <li class="list-group-item"
+              *ngFor="let app of applications; let i = index"
+              (click)="toggleDescription(i, $event)"
+              [class.expanded]="selectedApp === i">
+            
+            <div class="item-header">
+              <a href="{{ app.link }}" target="_blank">{{ app.name }}</a>
+              <span class="arrow">&#9654;</span> <!-- Unicode right arrow ▶ -->
+            </div>
+            
+            <p *ngIf="selectedApp === i && app.description" class="description">
+              {{ app.description }}
+            </p>
+          </li>
         </ul>
       </div>
+      
     </div>
   </div>
 </main>
