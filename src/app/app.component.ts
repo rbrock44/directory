@@ -184,13 +184,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       const modeParam = params[this.modeUrlParam];
-      console.log('ngOnInit (subscribe): ', modeParam, modeParam === 'Professional');
 
       if (modeParam === 'Professional') {
         this.startMode = false;
       }
-
-      console.log('ngOnInit: startMode:', this.startMode);
 
       this.modeForm = this.fb.group({
         mode: [this.startMode] // true = Personal, false = Professional
@@ -198,8 +195,6 @@ export class AppComponent implements OnInit {
 
       this.subscribeToModeForm();
     });
-
-    this.subscribeToModeForm();
   }
 
   subscribeToModeForm(): void {
