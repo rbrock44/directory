@@ -177,13 +177,11 @@ export class AppComponent {
     private location: Location,
     private route: ActivatedRoute,
   ) {
-    const queryParams = new URLSearchParams(window.location.search);
-    const modeParam = queryParams.get(this.modeUrlParam);;
-   console.log('constructor: ', modeParam, modeParam === 'Professional')
-    if (modeParam !== null && modeParam !== '') {
-      if (modeParam === 'Professional') {
-        this.startMode = false;
-      }
+    const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
+    console.log('constructor: ', modeParam, modeParam === 'Professional')
+
+    if (modeParam === 'Professional') {
+      this.startMode = false;
     }
 
     console.log('constructor: start: ', this.startMode)
