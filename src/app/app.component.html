@@ -157,7 +157,7 @@
             <li class="list-group-company"
                 *ngFor="let company of this.professionalApplications"
             >
-              <p class="company-title">{{ company.company}}</p>
+              <p class="company-title">{{ company.name}}</p>
               <div class="company">
                 <li class="list-group-item"
                     *ngFor="let app of company.projects"
@@ -178,8 +178,8 @@
                     </svg>
                   </div>
 
-                  <p *ngIf="this.selectedApp === app && app.description" class="description medium-font">
-                    {{ app.description }}
+                  <p *ngIf="this.selectedCompany === company && this.selectedApp === app && app.description" class="description medium-font">
+                    {{ app?.description }}
                   </p>
 
                 </li>

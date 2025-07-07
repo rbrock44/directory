@@ -1,7 +1,18 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterOutlet} from '@angular/router';
 import {CommonModule, Location} from "@angular/common";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+interface Project {
+  name: string,
+  description: string,
+  link?: string
+}
+
+interface Company {
+  name: string,
+  projects: Project[]
+}
 
 @Component({
   selector: 'app-root',
@@ -14,7 +25,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'directory';
   modeUrlParam: string = 'mode';
   baseGithub = 'https://rbrock44.github.io/';
@@ -26,7 +37,7 @@ export class AppComponent {
   modeForm: FormGroup;
   startMode = true;
 
-  applications = [
+  applications: Project[] = [
     {
       name: 'Home Page',
       link: this.createLink('home-page'),
@@ -99,19 +110,18 @@ export class AppComponent {
     }
   ];
 
-  professionalApplications = [
+  professionalApplications: Company[] = [
     {
-      company: 'PGT Solutions',
+      name: 'PGT Solutions',
       projects: [
         {
           name: 'Veteran Disability Questionnaire Forms',
-          link: '',
           description: ''
         }
       ]
     },
     {
-      company: 'GlobalSpec LLC',
+      name: 'GlobalSpec LLC',
       projects: [
         {
           name: 'Product Search Replacement',
@@ -131,41 +141,35 @@ export class AppComponent {
       ]
     },
     {
-      company: 'Vizient Inc.',
+      name: 'Vizient Inc.',
       projects: [
         {
           name: 'Ginyu Force',
-          link: '',
           description: ''
         },
         {
           name: 'Rebates',
-          link: '',
           description: ''
         },
         {
           name: 'Contract Administration',
-          link: '',
           description: ''
         }
       ]
     },
     {
-       company: 'Toyoda Gosei North America',
+       name: 'Toyoda Gosei North America',
        projects: [
          {
            name: 'Toyota Shipping Confirmation System (TSCS)',
-           link: '',
            description: ''
          },
          {
           name: 'Cross-Company Badge Integration System',
-          link: '',
           description: 'At my previous role, I led a project to resolve a badge access issue affecting 50–75 employees from our parent company. These employees were unable to scan into the child company’s on-site health station due to incompatible badge system data.\nI collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.\nTo automate the syncing process, I developed a nightly batch job (shell script) that retrieved the latest badge numbers and updated the child company’s database accordingly.\nThe most complex part of this integration was reconciling badge values between the two systems. The parent company stored badge IDs in a raw form, while the health station required a proximity card value—derived through a bitwise shift operation and possibly masking. I reverse-engineered the logic to correctly map database values to their corresponding proximity card outputs, ensuring all employees could successfully scan in and be treated accordingly.'
          },
          {
           name: 'Automated Employee Separation Validation Tool',
-          link: '',
           description: `I was initially tasked with manually verifying monthly separation lists (Excel files containing names of former employees) against our internal systems, a tedious and time-consuming process that often took several hours.\nTo streamline this, I developed a script that automated the validation process by querying Active Directory to check each employee's current status. The script efficiently flagged discrepancies and confirmed separations without manual lookups, reducing processing time from hours to minutes.\nDuring implementation, we discovered inconsistencies between systems due to the use of preferred names or nicknames. This led to a cross-system update requiring all identity-based processes to standardize on legal first and last names for consistency. My work ultimately improved both accuracy and efficiency while prompting broader improvements in data governance across teams.`
          }
        ]
