@@ -177,7 +177,8 @@ export class AppComponent {
     private location: Location,
     private route: ActivatedRoute,
   ) {
-    const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
+    const queryParams = new URLSearchParams(window.location.search);
+    const modeParam = queryParams.get(this.modeUrlParam);;
    console.log('constructor: ', modeParam, modeParam === 'Professional')
     if (modeParam !== null && modeParam !== '') {
       if (modeParam === 'Professional') {
@@ -192,11 +193,6 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    console.log('init: ', this.startMode)
-//     this.modeForm = this.fb.group({
-//       mode: [this.startMode], // true = Personal, false = Professional
-//     });
-
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.selectedApp = undefined;
       this.selectedCompany = undefined;
