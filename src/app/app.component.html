@@ -135,9 +135,9 @@
         <ul class="list-group">
           <div *ngIf="this.selectedMode === 'Personal'">
             <li class="list-group-item"
-                *ngFor="let app of this.applications; let i = index"
-                (click)="this.toggleDescription(i, $event)"
-                [class.expanded]="this.selectedApp === i"
+                *ngFor="let app of this.applications"
+                (click)="this.toggleDescription(app, $event)"
+                [class.expanded]="this.selectedApp === app"
             >
 
               <div class="item-header">
@@ -147,7 +147,7 @@
                 </svg>
               </div>
 
-              <p *ngIf="this.selectedApp === i && app.description" class="description">
+              <p *ngIf="this.selectedApp === app && app.description" class="description">
                 {{ app.description }}
               </p>
             </li>
@@ -179,7 +179,7 @@
                   </div>
 
                   <p *ngIf="this.selectedCompany === company && this.selectedApp === app && this.selectedApp?.description" class="description medium-font">
-                    {{ this.selectedApp?.description }}
+                    {{ this.selectedApp.description }}
                   </p>
 
                 </li>
