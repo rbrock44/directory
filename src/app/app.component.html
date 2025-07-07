@@ -178,8 +178,8 @@
                     </svg>
                   </div>
 
-                  <p *ngIf="this.selectedCompany === company && this.selectedApp === app && app.description" class="description medium-font">
-                    {{ app?.description }}
+                  <p *ngIf="this.selectedCompany === company && this.selectedApp === app && this.selectedApp.description" class="description medium-font">
+                    {{ this.selectedApp.description }}
                   </p>
 
                 </li>

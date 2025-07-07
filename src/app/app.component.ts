@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   coffeeUrl: string = 'https://buymeacoffee.com/rbrock';
   selectedApp = undefined;
   selectedCompany = undefined;
-  modeForm: FormGroup;
+  modeForm: FormGroup = {};
   startMode = true;
 
   applications: Project[] = [
@@ -116,7 +116,7 @@ export class AppComponent implements OnInit {
       projects: [
         {
           name: 'Veteran Disability Questionnaire Forms',
-          description: ''
+          description: `I led the development of a full-stack web application for the VA focused on disability questionnaire forms.\nThe platform used React for the frontend, Node.js for the backend, and PostgreSQL for data storage.\nIt allowed veterans to complete and submit standardized disability forms through a modern, accessible interface.\nWe prioritized performance, accessibility, and compliance with government standards.`
         }
       ]
     },
@@ -131,12 +131,12 @@ export class AppComponent implements OnInit {
         {
           name: 'Legacy Website Authentication Migration',
           link: 'https://www.globalspec.com/MyGlobalSpec/NewProfile',
-          description: ``
+          description: `I migrated of several legacy systems to the centralized Kotlin-based user authentication and account management service I had previously developed.\nThese legacy platforms had inconsistent data validation rules and siloed account structures that required extensive cleanup and unification.\nThe new service enforced strict backend validation and centralized all user data management logic.\nIntroducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.
+`
         },
         {
           name: 'Centralized Authentication System',
-          link: '',
-          description: `I developed a centralized authentication service in Kotlin to consolidate user login across five legacy websites, each of which previously required separate account creation.\nThis new system allowed users to register and sign in from a single location, eliminating duplicated accounts and improving user experience.\nThe solution enforced a universal validation rule set that replaced inconsistent or site-specific checks found across the legacy apps.\nOne major challenge was determining the correct scope of the project—certain responsibilities like leads and automated emails were owned by a separate microservice, requiring clear boundaries and coordination.\nAnother key challenge was integrating stricter validation into a loosely enforced legacy ecosystem.\nIntroducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.`
+          description: `I developed a centralized authentication service in Kotlin to consolidate user login across five legacy websites, each of which previously required separate account creation.\nThis new system allowed users to register and sign in from a single location, eliminating duplicated accounts and improving user experience.\nThe solution enforced a universal validation rule set that replaced inconsistent or site-specific checks found across the legacy apps.\nOne major challenge was determining the correct scope of the project—certain responsibilities like leads and automated emails were owned by a separate microservice, requiring clear boundaries and coordination.\nAnother key challenge was integrating stricter validation into a loosely enforced legacy ecosystem.`
         }
       ]
     },
@@ -184,13 +184,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
-    console.log('constructor: ', modeParam, modeParam === 'Professional')
+    console.log('init: ', modeParam, modeParam === 'Professional')
 
     if (modeParam === 'Professional') {
       this.startMode = false;
     }
 
-    console.log('constructor: start: ', this.startMode)
+    console.log('init: start: ', this.startMode)
     this.modeForm = this.fb.group({
       mode: [this.startMode], // true = Personal, false = Professional
     });
