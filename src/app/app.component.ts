@@ -24,6 +24,7 @@ export class AppComponent {
   selectedApp = undefined;
   selectedCompany = undefined;
   modeForm: FormGroup;
+  startMode = true;
 
   applications = [
     {
@@ -165,17 +166,19 @@ export class AppComponent {
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
 
     if (modeParam !== null && modeParam !== '') {
+      console.log('constructor', modeParam, modeParam === 'Professional')
       if (modeParam === 'Professional') {
-        mode = false;
+        startMode = false;
       }
     }
-
-    this.modeForm = this.fb.group({
-      mode: [mode], // true = Personal, false = Professional
-    });
   }
 
   ngOnInit(): void {
+    console.log('init', startMode,)
+    this.modeForm = this.fb.group({
+      mode: [startMode], // true = Personal, false = Professional
+    });
+
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.selectedApp = undefined;
       this.selectedCompany = undefined;
@@ -206,35 +209,19 @@ export class AppComponent {
   }
 
   toggleCompanyDescription(appIndex: any, companyIndex: any, event: Event) {
-      const target = event.target as HTMLElement;
+    const target = event.target as HTMLElement;
 
-      if (target.tagName === 'A') {
-        return;
-      }
-
-      if (this.selectedApp === appIndex) {
-        this.selectedApp = undefined;
-        this.selectedCompany = undefined;
-      } else {
-        this.selectedCompany = companyIndex;
-        this.selectedApp = appIndex;
-      }
+    if (target.tagName === 'A') {
+      return;
     }
 
-  toggleCompany(company: any, event: Event) {
-      const target = event.target as HTMLElement;
-
-      console.log('toggleCompany', company, event);
-
-      if (target.tagName === 'A') {
-        return;
-      }
-
-      if (this.selectedCompany === company) {
-        this.selectedCompany = undefined;
-      } else {
-        this.selectedCompany = company;
-      }
+    if (this.selectedApp === appIndex && this.selectedCompany === companyIndex) {
+      this.selectedApp = undefined;
+      this.selectedCompany = undefined;
+    } else {
+      this.selectedCompany = companyIndex;
+      this.selectedApp = appIndex;
+    }
   }
 
   private buildUrl(mode: boolean): string {
