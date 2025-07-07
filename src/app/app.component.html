@@ -159,7 +159,7 @@
                 (click)="this.toggleDescription(ind, $event)"
                 [class.expanded]="this.selectedCompany === ind"
             >
-
+              <p>{{ company.company}}</p>
               <div class="company">
                 <li class="list-group-item"
                     *ngFor="let app of company.projects; let i = index"
