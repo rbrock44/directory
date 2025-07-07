@@ -157,11 +157,11 @@
             <li class="list-group-company"
                 *ngFor="let company of this.professionalApplications; let ind = index"
             >
-              <p>{{ company.company}}</p>
+              <p class="company-title">{{ company.company}}</p>
               <div class="company">
                 <li class="list-group-item"
                     *ngFor="let app of company.projects; let i = index"
-                    (click)="this.toggleCompanyDescription(i, $event)"
+                    (click)="this.toggleCompanyDescription(i, ind, $event)"
                     [class.expanded]="this.selectedCompany === ind && this.selectedApp === i"
                 >
                   <div class="item-header">

@@ -165,6 +165,12 @@ input:checked + .slider:before {
   white-space: pre-line
 }
 
+.company-title {
+  font-size: large;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .social-links-row {
     gap: 1rem;
