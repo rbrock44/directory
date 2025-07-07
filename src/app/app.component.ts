@@ -177,6 +177,8 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
+      this.selectedApp = undefined;
+      this.selectedCompany = undefined;
       this.location.replaceState(this.buildUrl(mode));
     });
   }
