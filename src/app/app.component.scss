@@ -104,6 +104,12 @@
   margin: 10px;
   justify-content: center;
   display: flex;
+  gap: 12px; /* space between switch and text */
+}
+
+.toggle-container p {
+  margin: 0;
+  font-size: 16px;
 }
 
 .switch {
