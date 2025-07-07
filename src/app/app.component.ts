@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, RouterOutlet} from '@angular/router';
 import {CommonModule, Location} from "@angular/common";
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
