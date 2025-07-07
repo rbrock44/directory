@@ -122,22 +122,13 @@
         </div>
       </div>
 
-      <div class="radio-btn-container" [formGroup]="this.modeForm">
-        <div class="radio-btn-row">
-          <div>
-            <label>
-              <input type="radio" formControlName="mode" value="Personal" />
-              Personal
-            </label>
+      <div class="toggle-container" [formGroup]="this.modeForm">
+        <label class="switch">
+          <input type="checkbox" formControlName="mode" />
+          <span class="slider round"></span>
+        </label>
 
-            <label>
-              <input type="radio" formControlName="mode" value="Professional" />
-              Professional
-            </label>
-          </div>
-
-          <p>Current selection: {{ this.selectedMode }}</p>
-        </div>
+        <p>Current selection: {{ this.selectedMode }}</p>
       </div>
 
       <div class="links-section">

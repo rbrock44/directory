@@ -157,7 +157,7 @@ export class AppComponent {
     private route: ActivatedRoute,
   ) {
     this.modeForm = this.fb.group({
-      mode: ['Personal'], // default value
+      mode: [true], // true = Personal, false = Professional
     });
   }
 
@@ -165,7 +165,9 @@ export class AppComponent {
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
 
     if (modeParam !== null && modeParam !== '') {
-      this.modeForm.patchValue({ mode: modeParam });
+      if (modeParam === 'Professional') {
+        this.modeForm.patchValue({ mode: false });
+      }
     }
 
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: string) => {
@@ -174,7 +176,7 @@ export class AppComponent {
   }
 
   get selectedMode() {
-    return this.modeForm.get('mode')?.value;
+    return this.modeForm.get('mode')?.value ? 'Personal' : 'Professional';
   }
 
   createLink(name: string): string {
@@ -195,10 +197,10 @@ export class AppComponent {
     }
   }
 
-  private buildUrl(mode: string | null): string {
+  private buildUrl(mode: boolean): string {
     const queryParams = new URLSearchParams();
 
-    if (this.selectedMode !== null && this.selectedMode !== '' && this.selectedMode !== 'Personal') {
+    if (this.selectedMode !== null && this.selectedMode !== 'Personal') {
       queryParams.set(this.modeUrlParam, this.selectedMode);
     }
 
