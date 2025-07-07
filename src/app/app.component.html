@@ -168,12 +168,12 @@
                 >
                   <div class="item-header">
                     <a
-                      *ngIf="app?.link && app?.link !== ''"
-                      href="{{ app?.link }}"
+                      *ngIf="app.link && app.link !== ''"
+                      href="{{ app.link }}"
                       target="_blank"
                     >{{ app.name }}</a>
                     <p
-                      *ngIf="app?.link === null || app?.link === undefined || app?.link === ''"
+                      *ngIf="app.link === null || app.link === undefined || app.link === ''"
                     >{{ app.name }}</p>
                     <svg class="arrow" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="6 9 12 15 18 9" />
