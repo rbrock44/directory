@@ -32,8 +32,8 @@ export class AppComponent implements OnInit {
   githubUrl: string = 'https://github.com/rbrock44';
   linkedinUrl: string = 'https://www.linkedin.com/in/ryan-brock-4b8123262/';
   coffeeUrl: string = 'https://buymeacoffee.com/rbrock';
-  selectedApp = undefined;
-  selectedCompany = undefined;
+  selectedApp: Project | undefined = undefined;
+  selectedCompany: Company | undefined = undefined;
   modeForm: FormGroup = {};
   startMode = true;
 
@@ -131,8 +131,7 @@ export class AppComponent implements OnInit {
         {
           name: 'Legacy Website Authentication Migration',
           link: 'https://www.globalspec.com/MyGlobalSpec/NewProfile',
-          description: `I migrated of several legacy systems to the centralized Kotlin-based user authentication and account management service I had previously developed.\nThese legacy platforms had inconsistent data validation rules and siloed account structures that required extensive cleanup and unification.\nThe new service enforced strict backend validation and centralized all user data management logic.\nIntroducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.
-`
+          description: `I migrated several legacy systems to the centralized Kotlin-based user authentication and account management service I had previously developed.\nThese legacy platforms had inconsistent data validation rules and siloed account structures that required extensive cleanup and unification.\nThe new service enforced strict backend validation and centralized all user data management logic.\nIntroducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.`
         },
         {
           name: 'Centralized Authentication System',
@@ -166,7 +165,7 @@ export class AppComponent implements OnInit {
          },
          {
           name: 'Cross-Company Badge Integration System',
-          description: 'At my previous role, I led a project to resolve a badge access issue affecting 50–75 employees from our parent company. These employees were unable to scan into the child company’s on-site health station due to incompatible badge system data.\nI collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.\nTo automate the syncing process, I developed a nightly batch job (shell script) that retrieved the latest badge numbers and updated the child company’s database accordingly.\nThe most complex part of this integration was reconciling badge values between the two systems. The parent company stored badge IDs in a raw form, while the health station required a proximity card value—derived through a bitwise shift operation and possibly masking. I reverse-engineered the logic to correctly map database values to their corresponding proximity card outputs, ensuring all employees could successfully scan in and be treated accordingly.'
+          description: 'I led this project to resolve a badge access issue affecting 50–75 employees from our parent company. These employees were unable to scan into the child company’s on-site health station due to incompatible badge system data.\nI collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.\nTo automate the syncing process, I developed a nightly batch job (shell script) that retrieved the latest badge numbers and updated the child company’s database accordingly.\nThe most complex part of this integration was reconciling badge values between the two systems. The parent company stored badge IDs in a raw form, while the health station required a proximity card value—derived through a bitwise shift operation and possibly masking. I reverse-engineered the logic to correctly map database values to their corresponding proximity card outputs, ensuring all employees could successfully scan in and be treated accordingly.'
          },
          {
           name: 'Automated Employee Separation Validation Tool',
