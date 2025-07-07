@@ -102,6 +102,7 @@
 
 .toggle-container {
   margin: 10px;
+  align-items: center;
   justify-content: center;
   display: flex;
   gap: 12px; /* space between switch and text */
@@ -110,11 +111,12 @@
 .toggle-container p {
   margin: 0;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .switch {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 50px;
   height: 28px;
 }
