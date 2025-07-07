@@ -160,9 +160,7 @@ export class AppComponent {
     private fb: FormBuilder,
     private location: Location,
     private route: ActivatedRoute,
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     var mode: boolean = true;
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
 
@@ -175,7 +173,9 @@ export class AppComponent {
     this.modeForm = this.fb.group({
       mode: [mode], // true = Personal, false = Professional
     });
+  }
 
+  ngOnInit(): void {
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.location.replaceState(this.buildUrl(mode));
     });
