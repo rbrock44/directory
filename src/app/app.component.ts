@@ -144,15 +144,15 @@ export class AppComponent implements OnInit {
       projects: [
         {
           name: 'Ginyu Force',
-          description: ''
+          description: 'After the Rebates work phased out, our team developed and maintained an ecosystem of 7 microservices.\n\nThis included 4 Angular frontends—one acting as a portal using Module Federation to integrate the other 3.\n\nWe also managed 3 Kotlin backend services, each corresponding to one of the non-portal frontends.\n\nThe architecture supported modular development with a cohesive user experience through the shared portal.'
         },
         {
           name: 'Rebates',
-          description: ''
+          description: `After working on Contract Administration, I joined the Rebates team, which took ownership of the rebate portion of the contract system.\n\nRebates had grown in complexity and was split off from the core Contract Administration platform.\n\nWe were responsible for handling rebate-specific workflows, calculations, and agreements as a standalone domain.\n\nThis separation allowed teams to focus more deeply on their areas and evolve the architecture to support future growth.`
         },
         {
           name: 'Contract Administration',
-          description: `I joined this team, which just got started working on a contract management system for hospitals and supplier vendors.\n\nAt the time, Angular, Java, paired programming, and test-driven development (TDD) were all new to me, and this project gave me hands-on experience with each.\n\nThe contracts included 10–15 sections with up to 50 or more values per section.\n\nEdit history was a key feature and shown at the bottom of the contract detail page.\n\nAs the system scaled, we introduced around 16 microservices, which was also my first exposure to microservice architecture.`
+          description: `I joined this team, which just got started working on a contract management system for hospitals and supplier vendors.\n\nAt the time, Angular, Java, paired programming, and test-driven development (TDD) were all new to me, and this project gave me hands-on experience with each.\n\nThe contracts included 10–15 sections with up to 50 or so values per section.\n\nEdit history was a key feature and shown at the bottom of the contract detail page.\n\nAs the system scaled, we grew to around 16 microservices, which was also my first exposure to microservice architecture.`
         }
       ]
     },
