@@ -161,6 +161,10 @@ input:checked + .slider:before {
   line-height: 1;
 }
 
+.description {
+  white-space: pre-line
+}
+
 @media (max-width: 768px) {
   .social-links-row {
     gap: 1rem;
