@@ -156,14 +156,12 @@
           <div *ngIf="this.selectedMode === 'Professional'">
             <li class="list-group-company"
                 *ngFor="let company of this.professionalApplications; let ind = index"
-                (click)="this.toggleDescription(ind, $event)"
-                [class.expanded]="this.selectedCompany === ind"
             >
               <p>{{ company.company}}</p>
               <div class="company">
                 <li class="list-group-item"
                     *ngFor="let app of company.projects; let i = index"
-                    (click)="this.toggleDescription(i, $event)"
+                    (click)="this.toggleCompanyDescription(i, $event)"
                     [class.expanded]="this.selectedCompany === ind && this.selectedApp === i"
                 >
                   <div class="item-header">
