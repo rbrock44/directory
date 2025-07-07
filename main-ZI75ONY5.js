@@ -94,11 +94,11 @@ During implementation, we discovered inconsistencies between systems due to the 
   }
 
   .content[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {
-    margin-top: 1.75rem;
+    margin-top: 0.8rem;
   }
 
-  .content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {
-    margin-top: 1.5rem;
+  .description[_ngcontent-%COMP%] {
+    margin-top: 0.8rem;
   }
 
   @media screen and (max-width: 650px) {
