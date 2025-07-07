@@ -22,6 +22,7 @@ export class AppComponent {
   linkedinUrl: string = 'https://www.linkedin.com/in/ryan-brock-4b8123262/';
   coffeeUrl: string = 'https://buymeacoffee.com/rbrock';
   selectedApp = undefined;
+  selectedCompany = undefined;
   modeForm: FormGroup;
 
   applications = [
@@ -195,6 +196,22 @@ export class AppComponent {
     } else {
       this.selectedApp = app;
     }
+  }
+
+  toggleCompany(company: any, event: Event) {
+      const target = event.target as HTMLElement;
+
+      console.log('toggleCompany', company, event);
+
+      if (target.tagName === 'A') {
+        return;
+      }
+
+      if (this.selectedCompany === company) {
+        this.selectedCompany = undefined;
+      } else {
+        this.selectedCompany = company;
+      }
   }
 
   private buildUrl(mode: boolean): string {

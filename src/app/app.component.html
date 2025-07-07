@@ -133,23 +133,63 @@
 
       <div class="links-section">
         <ul class="list-group">
-          <li class="list-group-item"
-              *ngFor="let app of this.applications; let i = index"
-              (click)="this.toggleDescription(i, $event)"
-              [class.expanded]="this.selectedApp === i"
-          >
+          <div *ngIf="this.selectedMode === 'Personal'">
+            <li class="list-group-item"
+                *ngFor="let app of this.applications; let i = index"
+                (click)="this.toggleDescription(i, $event)"
+                [class.expanded]="this.selectedApp === i"
+            >
 
-            <div class="item-header">
-              <a href="{{ app.link }}" target="_blank">{{ app.name }}</a>
-              <svg class="arrow" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </div>
+              <div class="item-header">
+                <a href="{{ app.link }}" target="_blank">{{ app.name }}</a>
+                <svg class="arrow" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
 
-            <p *ngIf="this.selectedApp === i && app.description" class="description">
-              {{ app.description }}
-            </p>
-          </li>
+              <p *ngIf="this.selectedApp === i && app.description" class="description">
+                {{ app.description }}
+              </p>
+            </li>
+          </div>
+
+          <div *ngIf="this.selectedMode === 'Professional'">
+            <li class="list-group-item"
+                *ngFor="let company of this.professionalApplications; let ind = index"
+                (click)="this.toggleDescription(ind, $event)"
+                [class.expanded]="this.selectedCompany === ind"
+            >
+
+              <div class="company">
+                <li class="list-group-item"
+                    *ngFor="let app of company.projects; let i = index"
+                    (click)="this.toggleDescription(i, $event)"
+                    [class.expanded]="this.selectedApp === i"
+                >
+                  <div class="item-header">
+                    <a
+                      *ngIf="app.link && app.link !== ''"
+                      href="{{ app.link }}"
+                      target="_blank"
+                    >{{ app.name }}</a>
+                    <p
+                      *ngIf="app.link === null || app.link === undefined || app.link === ''"
+                    >{{ app.name }}</p>
+                    <svg class="arrow" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+
+                  <p *ngIf="this.selectedApp === i && app.description" class="description">
+                    {{ app.description }}
+                  </p>
+
+                </li>
+
+              </div>
+            </li>
+          </div>
+
         </ul>
       </div>
 
