@@ -165,7 +165,7 @@ export class AppComponent {
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
 
     if (modeParam !== null && modeParam !== '') {
-      this.selectedMode = modeParam;
+      this.modeForm.patchValue({ mode: modeParam });
     }
 
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: string) => {
