@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
     {
       name: 'Family Recipes',
       link: this.createLink('family-recipes'),
-      description: 'All the family\'s recipes (and more)'
+      description: `All the family\'s recipes (and more)`
     },
     {
       name: 'Add Recipe',
@@ -66,12 +66,12 @@ export class AppComponent implements OnInit {
     {
       name: 'Connect 4 [WIP]',
       link: this.createLink('connect-4'),
-      description: 'Play Connect 4 against various AI difficulties to have some fun and increase skill'
+      description: 'Work in Progress -> Play Connect 4 against various AI difficulties to have some fun and increase skill'
     },
     {
       name: 'Compare Achievements [WIP]',
       link: this.createLink('compare-achievements'),
-      description: 'Compare achievements across multiple platforms and users with ease'
+      description: 'Work in Progress -> Compare achievements across multiple platforms and users with ease'
     },
     {
       name: 'Flash Cards',
