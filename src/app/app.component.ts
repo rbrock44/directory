@@ -178,9 +178,8 @@ export class AppComponent {
     private route: ActivatedRoute,
   ) {
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
-
+   console.log('constructor: ', modeParam, modeParam === 'Professional')
     if (modeParam !== null && modeParam !== '') {
-      console.log('constructor: ', modeParam, modeParam === 'Professional')
       if (modeParam === 'Professional') {
         this.startMode = false;
       }
