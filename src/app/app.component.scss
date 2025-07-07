@@ -159,6 +159,10 @@ input:checked + .slider:before {
   transform: translateX(22px);
 }
 
+.mode {
+  min-width: 145px;
+}
+
 @media (max-width: 768px) {
   .social-links-row {
     gap: 1rem;
