@@ -170,7 +170,7 @@ export class AppComponent {
       }
     }
 
-    this.modeForm.get('mode')?.valueChanges.subscribe((mode: string) => {
+    this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.location.replaceState(this.buildUrl(mode));
     });
   }
