@@ -1,12 +1,14 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
-import {CommonModule} from "@angular/common";
+import {ActivatedRoute, RouterOutlet} from '@angular/router';
+import {CommonModule, Location} from "@angular/common";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterOutlet
   ],
   templateUrl: './app.component.html',
@@ -14,11 +16,13 @@ import {CommonModule} from "@angular/common";
 })
 export class AppComponent {
   title = 'directory';
+  modeUrlParam: string = 'mode';
   baseGithub = 'https://rbrock44.github.io/';
   githubUrl: string = 'https://github.com/rbrock44';
   linkedinUrl: string = 'https://www.linkedin.com/in/ryan-brock-4b8123262/';
   coffeeUrl: string = 'https://buymeacoffee.com/rbrock';
   selectedApp = undefined;
+  modeForm: FormGroup;
 
   applications = [
     {
@@ -93,6 +97,86 @@ export class AppComponent {
     }
   ];
 
+  professionalApplications = [
+    {
+      company: 'PGT Solutions',
+      projects: [
+        {
+          name: '',
+          link: '',
+          description: ''
+        }
+      ]
+    },
+    {
+      company: 'GlobalSpec LLC',
+      projects: [
+        {
+          name: 'Centralized Authentication System (in Kotlin)',
+          link: 'https://www.globalspec.com/MyGlobalSpec/NewProfile',
+          description: `I developed a centralized authentication service in Kotlin to consolidate user login across five legacy websites, each of which previously required separate account creation. | This new system allowed users to register and sign in from a single location, eliminating duplicated accounts and improving user experience. | The solution enforced a universal validation rule set that replaced inconsistent or site-specific checks found across the legacy apps. | One major challenge was determining the correct scope of the project—certain responsibilities like leads and automated emails were owned by a separate microservice, requiring clear boundaries and coordination. | Another key challenge was integrating stricter validation into a loosely enforced legacy ecosystem. | Introducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.`
+        }
+      ]
+    },
+    {
+      company: 'Vizient Inc.',
+      projects: [
+        {
+          name: '',
+          link: '',
+          description: ''
+        }
+      ]
+    },
+    {
+       company: 'Toyoda Gosei North America',
+       projects: [
+         {
+           name: 'Toyota Shipping Confirmation System (TSCS)',
+           description: ''
+         },
+         {
+          name: 'Cross-Company Badge Integration System',
+          description: 'At my previous role, I led a project to resolve a badge access issue affecting 50–75 employees from our parent company. These employees were unable to scan into the child company’s on-site health station due to incompatible badge system data.\nI collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.\nTo automate the syncing process, I developed a nightly batch job (shell script) that retrieved the latest badge numbers and updated the child company’s database accordingly.\nThe most complex part of this integration was reconciling badge values between the two systems. The parent company stored badge IDs in a raw form, while the health station required a proximity card value—derived through a bitwise shift operation and possibly masking. I reverse-engineered the logic to correctly map database values to their corresponding proximity card outputs, ensuring all employees could successfully scan in and be treated accordingly.'
+         },
+         {
+          name: 'Automated Employee Separation Validation Tool',
+          description: `I was initially tasked with manually verifying monthly separation lists, Excel files containing names of former employees—against our internal systems, a tedious and time-consuming process that often took several hours. | To streamline this, I developed a script that automated the validation process by querying Active Directory to check each employee's current status. The script efficiently flagged discrepancies and confirmed separations without manual lookups, reducing processing time from hours to minutes. | During implementation, we discovered inconsistencies between systems due to the use of preferred names or nicknames. This led to a cross-system update requiring all identity-based processes to standardize on legal first and last names for consistency. My work ultimately improved both accuracy and efficiency while prompting broader improvements in data governance across teams.`
+         },
+         {
+          name: '',
+          description: ''
+         }
+       ]
+     }
+  ];
+
+  constructor(
+    private fb: FormBuilder,
+    private location: Location,
+    private route: ActivatedRoute,
+  ) {
+    this.modeForm = this.fb.group({
+      mode: ['Personal'], // default value
+    });
+  }
+
+  ngOnInit(): void {
+    const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
+
+    if (modeParam !== null && modeParam !== '') {
+      this.selectedMode = modeParam;
+    }
+
+    this.modeForm.get('mode')?.valueChanges.subscribe((mode: string) => {
+      this.location.replaceState(this.buildUrl(mode));
+    });
+  }
+
+  get selectedMode() {
+    return this.modeForm.get('mode')?.value;
+  }
+
   createLink(name: string): string {
     return `https://${name}.ryan-brock.com/`
   }
@@ -108,6 +192,21 @@ export class AppComponent {
       this.selectedApp = undefined;
     } else {
       this.selectedApp = app;
+    }
+  }
+
+  private buildUrl(mode: string | null): string {
+    const queryParams = new URLSearchParams();
+
+    if (this.selectedMode !== null && this.selectedMode !== '' && this.selectedMode !== 'Personal') {
+      queryParams.set(this.modeUrlParam, this.selectedMode);
+    }
+
+    const end = queryParams.toString();
+    if (end !== '') {
+      return `${location.pathname}?${queryParams.toString()}`;
+    } else {
+      return location.pathname;
     }
   }
 }
