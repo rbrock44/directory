@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   coffeeUrl: string = 'https://buymeacoffee.com/rbrock';
   selectedApp: Project | undefined = undefined;
   selectedCompany: Company | undefined = undefined;
-  modeForm: FormGroup = new FormGoup({});
+  modeForm: FormGroup = new FormGroup({});
   startMode = true;
 
   applications: Project[] = [
