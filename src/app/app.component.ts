@@ -129,6 +129,16 @@ export class AppComponent {
       company: 'Vizient Inc.',
       projects: [
         {
+          name: 'Ginyu Force',
+          link: '',
+          description: ''
+        },
+        {
+          name: 'Rebates',
+          link: '',
+          description: ''
+        },
+        {
           name: 'Contract Administration',
           link: '',
           description: ''
@@ -162,21 +172,20 @@ export class AppComponent {
     private location: Location,
     private route: ActivatedRoute,
   ) {
-    var mode: boolean = true;
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
 
     if (modeParam !== null && modeParam !== '') {
       console.log('constructor', modeParam, modeParam === 'Professional')
       if (modeParam === 'Professional') {
-        startMode = false;
+        this.startMode = false;
       }
     }
   }
 
   ngOnInit(): void {
-    console.log('init', startMode,)
+    console.log('init', this.startMode)
     this.modeForm = this.fb.group({
-      mode: [startMode], // true = Personal, false = Professional
+      mode: [this.startMode], // true = Personal, false = Professional
     });
 
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
