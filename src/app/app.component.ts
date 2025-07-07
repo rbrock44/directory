@@ -180,18 +180,23 @@ export class AppComponent {
     const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
 
     if (modeParam !== null && modeParam !== '') {
-      console.log('constructor', modeParam, modeParam === 'Professional')
+      console.log('constructor: ', modeParam, modeParam === 'Professional')
       if (modeParam === 'Professional') {
         this.startMode = false;
       }
     }
-  }
 
-  ngOnInit(): void {
-    console.log('init', this.startMode)
+    console.log('constructor: start: ', this.startMode)
     this.modeForm = this.fb.group({
       mode: [this.startMode], // true = Personal, false = Professional
     });
+  }
+
+  ngOnInit(): void {
+    console.log('init: ', this.startMode)
+//     this.modeForm = this.fb.group({
+//       mode: [this.startMode], // true = Personal, false = Professional
+//     });
 
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.selectedApp = undefined;
