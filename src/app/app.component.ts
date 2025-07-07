@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
           description: `I led the migration of the legacy /search/products page to a new React SSR application.\n\nThis was a high-priority initiative selected by the business to modernize a critical page and boost user engagement and revenue.\n\nThe frontend was built in React SSR, integrated with a Java + Elasticsearch backend, and used the Kotlin-based auth system I previously created.\n\nA major challenge was analytics integration, Adobe Analytics had hundreds of variables and years of technical debt.\n\nWe worked closely with analytics and business teams to determine which variables were still relevant and when to populate them.\n\nThe subdomain switch introduced cookie storage and E2E testing issues due to domain-based session handling.\n\nDespite these challenges, we successfully delivered and launched the new SSR search experience to production.`
         },
         {
-          name: 'Legacy Website Authentication Migration',
+          name: 'Legacy Website Auth/User Migration',
           link: 'https://www.globalspec.com/MyGlobalSpec/NewProfile',
           description: `I migrated several legacy systems to the centralized Kotlin-based user authentication and account management service I had previously developed.\n\nThese legacy platforms had inconsistent data validation rules and siloed account structures that required extensive cleanup and unification.\n\nThe new service enforced strict backend validation and centralized all user data management logic.\n\nIntroducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.`
         },
@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
         },
         {
           name: 'Contract Administration',
-          description: ''
+          description: `I joined a team working on a contract management system for hospitals and supplier vendors.\n\nAt the time, Angular, Java, paired programming, and test-driven development (TDD) were all new to me, and this project gave me hands-on experience with each.\n\nThe contracts included 10–15 sections with up to 50 or more values per section.\n\nEdit history was a key feature and shown at the bottom of the contract detail page.\n\nAs the system scaled, we introduced around 16 microservices, which was also my first exposure to microservice architecture.`
         }
       ]
     },
@@ -160,11 +160,11 @@ export class AppComponent implements OnInit {
        name: 'Toyoda Gosei North America',
        projects: [
          {
-           name: 'Toyota Shipping Confirmation System (TSCS)',
-           description: ''
+           name: 'Toyota Shipping Confirmation System',
+           description: `I developed a feature in the shipping scan verification system to track which parts were on which pallets and in what order they were loaded onto trucks.\n\nThis supported Toyota’s request for visibility into pallet sequencing at their circular-layout plant in Texas, where trucks unload one pallet at a time while circling the facility.\n\nI successfully rolled out the feature across 50 North American plants.\n\nI also worked directly with plant employees and department heads to create and implement training strategies for smooth adoption.`
          },
          {
-          name: 'Cross-Company Badge Integration System',
+          name: 'Health System Badge Integration',
           description: 'I led this project to resolve a badge access issue affecting 50–75 employees from our parent company. These employees were unable to scan into the child company’s on-site health station due to incompatible badge system data.\n\nI collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.\n\nTo automate the syncing process, I developed a nightly batch job (shell script) that retrieved the latest badge numbers and updated the child company’s database accordingly.\n\nThe most complex part of this integration was reconciling badge values between the two systems. The parent company stored badge IDs in a raw form, while the health station required a proximity card value (derived through a bitwise shift operation). I reverse-engineered the logic to correctly map database values to their corresponding proximity card outputs, ensuring all employees could successfully scan in and be treated accordingly.'
          },
          {
@@ -182,18 +182,27 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const modeParam = this.route.snapshot.queryParamMap.get(this.modeUrlParam);
-    console.log('init: ', modeParam, modeParam === 'Professional')
+    this.route.queryParams.subscribe(params => {
+      const modeParam = params[this.modeUrlParam];
+      console.log('ngOnInit (subscribe): ', modeParam, modeParam === 'Professional');
 
-    if (modeParam === 'Professional') {
-      this.startMode = false;
+      if (modeParam === 'Professional') {
+        this.startMode = false;
+      }
+
+      console.log('ngOnInit: startMode:', this.startMode);
+
+      this.modeForm = this.fb.group({
+        mode: [this.startMode] // true = Personal, false = Professional
+      });
+
+      this.subscribeToModeForm();
     }
 
-    console.log('init: start: ', this.startMode)
-    this.modeForm = this.fb.group({
-      mode: [this.startMode], // true = Personal, false = Professional
-    });
+    this.subscribeToModeForm();
+  }
 
+  subscribeToModeForm(): void {
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.selectedApp = undefined;
       this.selectedCompany = undefined;
