@@ -154,7 +154,7 @@
           </div>
 
           <div *ngIf="this.selectedMode === 'Professional'">
-            <li class="list-group-item"
+            <li class="list-group-company"
                 *ngFor="let company of this.professionalApplications; let ind = index"
                 (click)="this.toggleDescription(ind, $event)"
                 [class.expanded]="this.selectedCompany === ind"
