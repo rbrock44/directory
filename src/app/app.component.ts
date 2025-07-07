@@ -102,8 +102,7 @@ export class AppComponent {
       company: 'PGT Solutions',
       projects: [
         {
-          name: '',
-          link: '',
+          name: 'Veteran Disability Questionnaire Forms',
           description: ''
         }
       ]
@@ -112,9 +111,14 @@ export class AppComponent {
       company: 'GlobalSpec LLC',
       projects: [
         {
+          name: 'Product Search Replacement (in React)',
+          link: 'https://www.globalspec.com/search/products?term=motors',
+          description: `I led the migration of the legacy /search/products page to a new React SSR application.\nThis was a high-priority initiative selected by the business to modernize a critical page and boost user engagement and revenue.\nThe frontend was built in React SSR, integrated with a Java + Elasticsearch backend, and used the Kotlin-based auth system I previously created.\nA major challenge was analytics integration—Adobe Analytics had hundreds of variables and years of technical debt.\nWe worked closely with analytics and business teams to determine which variables were still relevant and when to populate them.\nThe subdomain switch introduced cookie storage and E2E testing issues due to domain-based session handling.\nDespite these challenges, we successfully delivered and launched the new SSR search experience to production.`
+        },
+        {
           name: 'Centralized Authentication System (in Kotlin)',
           link: 'https://www.globalspec.com/MyGlobalSpec/NewProfile',
-          description: `I developed a centralized authentication service in Kotlin to consolidate user login across five legacy websites, each of which previously required separate account creation. | This new system allowed users to register and sign in from a single location, eliminating duplicated accounts and improving user experience. | The solution enforced a universal validation rule set that replaced inconsistent or site-specific checks found across the legacy apps. | One major challenge was determining the correct scope of the project—certain responsibilities like leads and automated emails were owned by a separate microservice, requiring clear boundaries and coordination. | Another key challenge was integrating stricter validation into a loosely enforced legacy ecosystem. | Introducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.`
+          description: `I developed a centralized authentication service in Kotlin to consolidate user login across five legacy websites, each of which previously required separate account creation.\nThis new system allowed users to register and sign in from a single location, eliminating duplicated accounts and improving user experience.\nThe solution enforced a universal validation rule set that replaced inconsistent or site-specific checks found across the legacy apps.\nOne major challenge was determining the correct scope of the project—certain responsibilities like leads and automated emails were owned by a separate microservice, requiring clear boundaries and coordination.\nAnother key challenge was integrating stricter validation into a loosely enforced legacy ecosystem.\nIntroducing backend validation caused the end-to-end (E2E) test suite to fail, since many E2E flows relied on inserting nearly blank records that no longer passed the new stricter validation rules.`
         }
       ]
     },
@@ -122,7 +126,7 @@ export class AppComponent {
       company: 'Vizient Inc.',
       projects: [
         {
-          name: '',
+          name: 'Contract Administration',
           link: '',
           description: ''
         }
@@ -141,11 +145,7 @@ export class AppComponent {
          },
          {
           name: 'Automated Employee Separation Validation Tool',
-          description: `I was initially tasked with manually verifying monthly separation lists, Excel files containing names of former employees—against our internal systems, a tedious and time-consuming process that often took several hours. | To streamline this, I developed a script that automated the validation process by querying Active Directory to check each employee's current status. The script efficiently flagged discrepancies and confirmed separations without manual lookups, reducing processing time from hours to minutes. | During implementation, we discovered inconsistencies between systems due to the use of preferred names or nicknames. This led to a cross-system update requiring all identity-based processes to standardize on legal first and last names for consistency. My work ultimately improved both accuracy and efficiency while prompting broader improvements in data governance across teams.`
-         },
-         {
-          name: '',
-          description: ''
+          description: `I was initially tasked with manually verifying monthly separation lists, Excel files containing names of former employees—against our internal systems, a tedious and time-consuming process that often took several hours.\nTo streamline this, I developed a script that automated the validation process by querying Active Directory to check each employee's current status. The script efficiently flagged discrepancies and confirmed separations without manual lookups, reducing processing time from hours to minutes.\nDuring implementation, we discovered inconsistencies between systems due to the use of preferred names or nicknames. This led to a cross-system update requiring all identity-based processes to standardize on legal first and last names for consistency. My work ultimately improved both accuracy and efficiency while prompting broader improvements in data governance across teams.`
          }
        ]
      }
