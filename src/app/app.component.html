@@ -126,9 +126,9 @@
         <label class="switch">
           <input type="checkbox" formControlName="mode" />
           <span class="slider round"></span>
-
-          <p>{{ this.selectedMode }} Projects</p>
         </label>
+
+        <p>{{ this.selectedMode }} Projects</p>
       </div>
 
       <div class="links-section">
@@ -136,7 +136,8 @@
           <li class="list-group-item"
               *ngFor="let app of this.applications; let i = index"
               (click)="this.toggleDescription(i, $event)"
-              [class.expanded]="this.selectedApp === i">
+              [class.expanded]="this.selectedApp === i"
+          >
 
             <div class="item-header">
               <a href="{{ app.link }}" target="_blank">{{ app.name }}</a>
