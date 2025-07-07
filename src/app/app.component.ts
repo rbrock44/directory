@@ -220,19 +220,19 @@ export class AppComponent {
     }
   }
 
-  toggleCompanyDescription(appIndex: any, companyIndex: any, event: Event) {
+  toggleCompanyDescription(app: any, company: any, event: Event) {
     const target = event.target as HTMLElement;
 
     if (target.tagName === 'A') {
       return;
     }
 
-    if (this.selectedApp === appIndex && this.selectedCompany === companyIndex) {
+    if (this.selectedApp === app && this.selectedCompany === company) {
       this.selectedApp = undefined;
       this.selectedCompany = undefined;
     } else {
-      this.selectedCompany = companyIndex;
-      this.selectedApp = appIndex;
+      this.selectedCompany = company;
+      this.selectedApp = app;
     }
   }
 

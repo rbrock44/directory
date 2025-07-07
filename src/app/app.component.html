@@ -155,14 +155,14 @@
 
           <div *ngIf="this.selectedMode === 'Professional'">
             <li class="list-group-company"
-                *ngFor="let company of this.professionalApplications; let ind = index"
+                *ngFor="let company of this.professionalApplications"
             >
               <p class="company-title">{{ company.company}}</p>
               <div class="company">
                 <li class="list-group-item"
-                    *ngFor="let app of company.projects; let i = index"
-                    (click)="this.toggleCompanyDescription(i, ind, $event)"
-                    [class.expanded]="this.selectedCompany === ind && this.selectedApp === i"
+                    *ngFor="let app of company.projects"
+                    (click)="this.toggleCompanyDescription(app, company, $event)"
+                    [class.expanded]="this.selectedCompany === company && this.selectedApp === app"
                 >
                   <div class="item-header">
                     <a
@@ -178,7 +178,7 @@
                     </svg>
                   </div>
 
-                  <p *ngIf="this.selectedApp === i && app.description" class="description medium-font">
+                  <p *ngIf="this.selectedApp === app && app.description" class="description medium-font">
                     {{ app.description }}
                   </p>
 
