@@ -2,7 +2,7 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #bfbfbf;
+  background-color: dimgrey;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -28,7 +28,7 @@
   margin-bottom: 15px;
   font-size: 1.2rem;
   padding: 10px;
-  background-color: #dddddd;
+  background-color: #bfbfbf;
   border-radius: 8px;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -46,6 +46,21 @@
 
 .list-group-item a:hover {
   color: #0056b3;
+}
+
+.list-group-item.expanded .arrow {
+  transform: rotate(90deg); /* Rotates right arrow down */
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .social-links-container {
@@ -71,7 +86,7 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: #bfbfbf;
     transform: translateY(-2px);
   }
 
