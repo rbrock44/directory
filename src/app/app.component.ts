@@ -197,7 +197,7 @@ export class AppComponent implements OnInit {
       });
 
       this.subscribeToModeForm();
-    }
+    });
 
     this.subscribeToModeForm();
   }
