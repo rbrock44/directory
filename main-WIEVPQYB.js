@@ -59,7 +59,15 @@ This supported Toyota\u2019s request for visibility into pallet sequencing at th
 
 I successfully rolled out the feature across 50 North American plants.
 
-I also worked directly with plant employees and department heads to create and implement training strategies for smooth adoption.`},{name:"Health System Badge Integration",description:`I led this development/project to resolve a badge access issue affecting 50\u201375 employees from our parent company. These employees were unable to scan into the child company\u2019s on-site health station due to incompatible badge system data.
+I also worked directly with plant employees and department heads to create and implement training strategies for smooth adoption.`},{name:"Bin Dumper",description:`One of the most unusual projects I worked on was reviving a broken legacy .exe known as the 'Bin Dumper'.
+
+After a Windows upgrade rendered it non-functional, I used a JetBrains decompiler to reverse engineer the logic.
+
+I then rebuilt the program as a C# Windows application from scratch.
+
+The system also used a custom picture keyboard, where each image mapped to a combination of key presses (like Ctrl + A + 4).
+
+I worked with IT to decode those combinations and programmed the new application to respond accurately to them for input and navigation.`},{name:"Health System Badge Integration",description:`I led this development/project to resolve a badge access issue affecting 50\u201375 employees from our parent company. These employees were unable to scan into the child company\u2019s on-site health station due to incompatible badge system data.
 
 I collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.
 
