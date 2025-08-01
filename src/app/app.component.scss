@@ -175,6 +175,10 @@ input:checked + .slider:before {
   font-weight: bold;
 }
 
+.item-header-social-link {
+  color: #333;
+}
+
 @media (max-width: 768px) {
   .social-links-row {
     gap: 1rem;
