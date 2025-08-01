@@ -43,13 +43,13 @@ export class AppComponent implements OnInit {
       name: 'Home Page',
       link: this.createLink('home-page'),
       github: this.createGithub('home-page'),
-      description: 'Quick access to information Ryan wants: upcoming sports (basketball, football and mma) events, '
+      description: 'An angular application that devivers quick access to information Ryan wants: upcoming sports (basketball, football and mma) events, upcoming GDQ events, media filename search, concert history and personal links'
     },
     {
       name: 'Woodworking Projects',
       link: this.createLink('woodworking-projects'),
       github: this.createGithub('woodworking-projects'),
-      description: 'Shows off the woodworking projects'
+      description: 'A small angular application that shows off all of my woodworking projects. This repo holds the website and project list while another repo has all the images and scripts to meet image standards'
     },
     // {
     //   name: 'Drive Status',
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
       name: 'Family Recipes',
       link: this.createLink('family-recipes'),
       github: this.createGithub('family-recipes'),
-      description: `All the family\'s recipes (and more)`
+      description: `An angular application to hold all the family\'s recipes (and more). My grandma has a cookbook but we have ran out of copies and the famile keeps growing. This was built to ensure all family members (and more) could easily search and access all the recipes (plus new ones)`
     },
     {
       name: 'Add Recipe',
@@ -78,31 +78,31 @@ export class AppComponent implements OnInit {
       name: 'Compare Achievements [WIP]',
       link: this.createLink('compare-achievements'),
       github: this.createGithub('compare-achievements'),
-      description: 'Work in Progress -> Compare achievements across multiple platforms and users with ease'
+      description: 'Work in Progress -> Compare achievements across multiple platforms (steam first) and users with ease'
     },
     {
       name: 'Flash Cards',
       link: this.createLink('flash-cards'),
       github: this.createGithub('flash-cards'),
-      description: 'Flash cards to help study'
+      description: 'Flash cards to help study. This angular application was initially created to help my girlfriend (and her class) study for a medical coding exam. The website has been expanded and any subject of flash cards can be added with several types of options'
     },
     {
       name: 'Cleaning Schedule',
       link: this.createLink('cleaning-schedule'),
       github: this.createGithub('cleaning-schedule'),
-      description: 'Used to help keep track of people\'s cleaning schedule'
+      description: 'Used to help keep track of people\'s cleaning schedule. When there are multiple people having to coordinate cleaning certain houses on a schedule this website helps manage that'
     },
     {
       name: 'Scorekeeping By Rounds',
       link: this.createLink('scorekeeping-by-rounds'),
       github: this.createGithub('scorekeeping-by-rounds'),
-      description: 'Helps manage a game where teams/players keep score over multiple rounds'
+      description: 'Helps manage a game where teams/players keep score over multiple rounds. This was created for a non profit organization to manage their Trivia night instead of using excel'
     },
     {
       name: '1705 David',
       link: this.createLink('1705-David'),
       github: this.createGithub('1705-David'),
-      description: 'A place to showcase a rent house'
+      description: 'A place to showcase a rent house. This angular application is a portal for to contact me or see one of my rent houses'
     },
     {
       name: 'Auction Advisor',
