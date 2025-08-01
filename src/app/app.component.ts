@@ -238,7 +238,7 @@ export class AppComponent implements OnInit {
   toggleDescription(app: any, event: Event) {
     const target = event.target as HTMLElement;
 
-    if (target.tagName === 'A') {
+    if (target.tagName === 'A' || target.tagName === 'I') {
       return;
     }
 
