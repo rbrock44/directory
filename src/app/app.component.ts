@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
       name: 'Home Page',
       link: this.createLink('home-page'),
       github: this.createGithub('home-page'),
-      description: 'An angular application that devivers quick access to information Ryan wants: upcoming sports (basketball, football and mma) events, upcoming GDQ events, media filename search, concert history and personal links'
+      description: 'An angular application that delivers quick access to information Ryan wants: upcoming sports (basketball, football and mma) events, upcoming GDQ events, media filename search, concert history and personal links'
     },
     {
       name: 'Woodworking Projects',
