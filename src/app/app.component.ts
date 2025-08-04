@@ -43,13 +43,13 @@ export class AppComponent implements OnInit {
       name: 'Home Page',
       link: this.createLink('home-page'),
       github: this.createGithub('home-page'),
-      description: 'An angular application that delivers quick access to information Ryan wants: upcoming sports (basketball, football and mma) events, upcoming GDQ events, media filename search, concert history and personal links'
+      description: 'Quick access to information Ryan wants'
     },
     {
       name: 'Woodworking Projects',
       link: this.createLink('woodworking-projects'),
       github: this.createGithub('woodworking-projects'),
-      description: 'A small angular application that shows off all of my woodworking projects. This repo holds the website and project list while another repo has all the images and scripts to meet image standards'
+      description: 'Shows off the woodworking projects'
     },
     // {
     //   name: 'Drive Status',
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
       name: 'Family Recipes',
       link: this.createLink('family-recipes'),
       github: this.createGithub('family-recipes'),
-      description: `An angular application to hold all the family\'s recipes (and more). My grandma has a cookbook but we have ran out of copies and the famile keeps growing. This was built to ensure all family members (and more) could easily search and access all the recipes (plus new ones)`
+      description: `All the family\'s recipes (and more)`
     },
     {
       name: 'Add Recipe',
@@ -84,13 +84,13 @@ export class AppComponent implements OnInit {
       name: 'Flash Cards',
       link: this.createLink('flash-cards'),
       github: this.createGithub('flash-cards'),
-      description: 'Flash cards to help study. This angular application was initially created to help my girlfriend (and her class) study for a medical coding exam. The website has been expanded and any subject of flash cards can be added with several types of options'
+      description: 'Flash cards to help study'
     },
     {
       name: 'Cleaning Schedule',
       link: this.createLink('cleaning-schedule'),
       github: this.createGithub('cleaning-schedule'),
-      description: 'Used to help keep track of people\'s cleaning schedule. When there are multiple people having to coordinate cleaning certain houses on a schedule this website helps manage that'
+      description: 'Used to help keep track of people\'s cleaning schedule'
     },
     {
       name: 'Scorekeeping By Rounds',
@@ -102,7 +102,7 @@ export class AppComponent implements OnInit {
       name: '1705 David',
       link: this.createLink('1705-David'),
       github: this.createGithub('1705-David'),
-      description: 'A place to showcase a rent house. This angular application is a portal for to contact me or see one of my rent houses'
+      description: 'A place to showcase a rent house'
     },
     {
       name: 'Auction Advisor',
