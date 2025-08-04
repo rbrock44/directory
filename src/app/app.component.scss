@@ -100,7 +100,7 @@
   }
 }
 
-.social-link-item:hover {
+.social-link-item {
   border-radius: 8px;
   padding: 2px 4px;
 
@@ -189,7 +189,7 @@ input:checked + .slider:before {
 }
 
 .item-name {
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 @media (max-width: 768px) {
