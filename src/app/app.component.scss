@@ -101,8 +101,12 @@
 }
 
 .social-link-item:hover {
-  background-color: dimgrey;
   border-radius: 8px;
+  padding: 2px 4px;
+
+  &:hover {
+    background-color: dimgrey;
+  }
 }
 
 .toggle-container {
