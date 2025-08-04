@@ -20,17 +20,14 @@
 
 ## 🧠 What's My Purpose?
 
-  
 This is a server side single-page angular frontend created to host links and descriptions to the other software creations I've made. It was inspired by zuul - which is a backend directory for microservice management
 
 ---
 
 ## 🛠 Technologies
 
-List the tools, languages, or frameworks used.
-
 - Framework: `Angular 18`
-- Testing: `Karma`, `Cypress`
+- Testing: `Karma`
 - Deployment: `GitHub Pages`
 
 ---
