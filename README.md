@@ -3,11 +3,17 @@
 > This project hosts links and descriptions of software projects I've created <br/>
 > [Live - Ryan's Website Directory](https://directory.ryan-brock.com/)
 
+Screenshots:
+![preview](/screenshots/main.png)
+![expanded preview](/screenshots/expanded.png)
+![professional preview](/screenshots/profressional.png)
+
 ---
 
 ## 📚 Table of Contents
 
 - [What's My Purpose?](#-whats-my-purpose)
+- [How to Use](#-how-to-use)
 - [Technologies](#-technologies)
 - [Getting Started (Local Setup)](#-getting-started-local-setup)
   - [Run Locally](#run-locally)
@@ -21,6 +27,22 @@
 ## 🧠 What's My Purpose?
 
 This is a server side single-page angular frontend created to host links and descriptions to the other software creations I've made. It was inspired by zuul - which is a backend directory for microservice management
+
+---
+
+## 🚦 How to Use
+
+- `Social Banner` - At the top is a social banner containing buttons that link to my Github, Linked, and BuyMeACoffee
+- `Project Slider` - This slider swaps between `Personal` and `Profressional` projects
+- `Project` - Each project has the following properties
+    - (Only `Personal`) Github Readme Link
+    - Name (also a link to website, if available)
+    - Description - must click to expand/see
+
+Screenshots:
+![preview](/screenshots/main.png)
+![expanded preview](/screenshots/expanded.png)
+![professional preview](/screenshots/profressional.png)
 
 ---
 
