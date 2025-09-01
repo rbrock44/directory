@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
     {
       name: 'Enderle Cattle Co',
       link: this.createLink('enderle-cattle-co'),
-      github: this.createGithub('enderle-cattle-co'),
+      github: this.createGithub('enderle-cattle-company'),
       description: 'A place for a cattle company to showcase their company, people, cattle and their story'
     },
     {
