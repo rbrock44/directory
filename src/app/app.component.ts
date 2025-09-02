@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
       description: 'Helps manage a game where teams/players keep score over multiple rounds. This was created for a non profit organization to manage their Trivia night instead of using excel'
     },
     {
-      name: 'Enderle Cattle Co',
+      name: 'Enderle Cattle Co [WIP]',
       link: this.createLink('enderle-cattle-co'),
       github: this.createGithub('enderle-cattle-company'),
       description: 'A place for a cattle company to showcase their company, people, cattle and their story'
