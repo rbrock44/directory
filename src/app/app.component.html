@@ -7,94 +7,6 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-  }
-
-  .content h1 {
-    margin-top: 0.8rem;
-  }
-
-  .description {
-    margin-top: 0.8rem;
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-  }
-</style>
-
 <main class="main">
   <div class="content">
     <div class="container">
@@ -104,17 +16,17 @@
 
       <div class="social-links-container">
         <div class="social-links-row">
-          <a [href]="this.githubUrl" class="social-link" target="_blank" rel="noopener noreferrer">
+          <a [href]="this.githubUrl" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub">
             <i class="fab fa-github"></i>
             <span class="link-text">GitHub</span>
           </a>
 
-          <a [href]="this.linkedinUrl" class="social-link" target="_blank" rel="noopener noreferrer">
+          <a [href]="this.linkedinUrl" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
             <span class="link-text">LinkedIn</span>
           </a>
 
-          <a [href]="this.coffeeUrl" class="social-link" target="_blank" rel="noopener noreferrer">
+          <a [href]="this.coffeeUrl" class="social-link" target="_blank" rel="noopener noreferrer" title="Buy me a coffee">
             <i class="fas fa-coffee"></i>
             <span class="link-text">Buy me a coffee</span>
           </a>
@@ -141,12 +53,12 @@
 
               <div class="item-header">
                 <div class="item-header-container">
-                  <a *ngIf="app.github" [href]="app.github" class="social-link-item" target="_blank" rel="noopener noreferrer">
+                  <a *ngIf="app.github" [href]="app.github" class="social-link-item" target="_blank" rel="noopener noreferrer" title="View GitHub repository">
                     <i class="fab fa-github item-header-social-link"></i>
                   </a>
-                  <a class="item-name" href="{{ app.link }}" target="_blank">{{ app.name }}</a>
+                  <a class="item-name" [href]="app.link" target="_blank">{{ app.name }}</a>
                 </div>
-                <svg class="arrow" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </div>
@@ -171,13 +83,15 @@
                   <div class="item-header">
                     <a
                       *ngIf="app.link && app.link !== ''"
-                      href="{{ app.link }}"
+                      [href]="app.link"
                       target="_blank"
+                      class="item-name"
                     >{{ app.name }}</a>
                     <p
                       *ngIf="app.link === null || app.link === undefined || app.link === ''"
+                      class="item-name"
                     >{{ app.name }}</p>
-                    <svg class="arrow" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </div>

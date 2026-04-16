@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, RouterOutlet} from '@angular/router';
-import {CommonModule, Location} from "@angular/common";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { CommonModule, Location } from "@angular/common";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 interface Project {
@@ -183,33 +183,33 @@ export class AppComponent implements OnInit {
       ]
     },
     {
-       name: 'Toyoda Gosei North America',
-       projects: [
-         {
-           name: 'Toyota Shipping Confirmation System',
-           description: `I developed a feature in the shipping scan verification system to track which parts were on which pallets and in what order they were loaded onto trucks.\n\nThis supported Toyota’s request for visibility into pallet sequencing at their circular-layout plant in Texas, where trucks unload one pallet at a time while circling the facility.\n\nI successfully rolled out the feature across 50 North American plants.\n\nI also worked directly with plant employees and department heads to create and implement training strategies for smooth adoption.`
-         },
-         {
-           name: 'Bin Dumper',
-           description: `One of the most unusual projects I worked on was reviving a broken legacy .exe known as the 'Bin Dumper'.\n\nAfter a Windows upgrade rendered it non-functional, I used a JetBrains decompiler to reverse engineer the logic.\n\nI then rebuilt the program as a C# Windows application from scratch.\n\nThe system also used a custom picture keyboard, where each image mapped to a combination of key presses (like Ctrl + A + 4).\n\nI worked with IT to decode those combinations and programmed the new application to respond accurately to them for input and navigation.`
-         },
-         {
+      name: 'Toyoda Gosei North America',
+      projects: [
+        {
+          name: 'Toyota Shipping Confirmation System',
+          description: `I developed a feature in the shipping scan verification system to track which parts were on which pallets and in what order they were loaded onto trucks.\n\nThis supported Toyota’s request for visibility into pallet sequencing at their circular-layout plant in Texas, where trucks unload one pallet at a time while circling the facility.\n\nI successfully rolled out the feature across 50 North American plants.\n\nI also worked directly with plant employees and department heads to create and implement training strategies for smooth adoption.`
+        },
+        {
+          name: 'Bin Dumper',
+          description: `One of the most unusual projects I worked on was reviving a broken legacy .exe known as the 'Bin Dumper'.\n\nAfter a Windows upgrade rendered it non-functional, I used a JetBrains decompiler to reverse engineer the logic.\n\nI then rebuilt the program as a C# Windows application from scratch.\n\nThe system also used a custom picture keyboard, where each image mapped to a combination of key presses (like Ctrl + A + 4).\n\nI worked with IT to decode those combinations and programmed the new application to respond accurately to them for input and navigation.`
+        },
+        {
           name: 'Health System Badge Integration',
           description: 'I led this development/project to resolve a badge access issue affecting 50–75 employees from our parent company. These employees were unable to scan into the child company’s on-site health station due to incompatible badge system data.\n\nI collaborated with both IT teams and secured access to the internal badge data system. This involved opening a port, allowing us to pull updated badge data from the parent company system.\n\nTo automate the syncing process, I developed a nightly batch job (shell script) that retrieved the latest badge numbers and updated the child company’s database accordingly.\n\nThe most complex part of this integration was reconciling badge values between the two systems. The parent company stored badge IDs in a raw form, while the health station required a proximity card value (derived through a bitwise shift operation). I solved and reverse-engineered the logic to correctly map database values to their corresponding proximity card outputs, ensuring all employees could successfully scan in and be treated accordingly.'
-         },
-         {
+        },
+        {
           name: 'Employee Separation Validation Tool',
           description: `I was initially tasked with manually verifying monthly separation lists (Excel files containing names of former employees) against our internal systems, a tedious and time-consuming process that often took several hours.\n\nTo streamline this, I developed a script that automated the validation process by querying Active Directory to check each employee's current status. The script efficiently flagged discrepancies and confirmed separations without manual lookups, reducing processing time from hours to minutes/seconds.\n\nDuring implementation, we discovered inconsistencies between systems due to the use of preferred names or nicknames. This led to a cross-system update requiring all identity-based processes to standardize on legal first and last names for consistency. My work ultimately improved both accuracy and efficiency while prompting broader improvements in data governance across teams.`
-         }
-       ]
-     }
+        }
+      ]
+    }
   ];
 
   constructor(
     private fb: FormBuilder,
     private location: Location,
     private route: ActivatedRoute,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
