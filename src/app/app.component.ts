@@ -75,10 +75,10 @@ export class AppComponent implements OnInit {
       description: 'A place to hold many different utilities, like converters and calculations'
     },
     {
-      name: 'Connect 4 [WIP]',
+      name: 'Connect 4',
       link: this.createLink('connect-4'),
       github: this.createGithub('connect-4'),
-      description: 'Work in Progress -> Play Connect 4 against various AI difficulties to have some fun and increase skill'
+      description: 'Play Connect 4 against various AI difficulties to have some fun and increase skill'
     },
     {
       name: 'Compare Achievements [WIP]',
