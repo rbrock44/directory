@@ -12,7 +12,9 @@
     <div class="container">
       <h1 class="title">Ryan's Website Directory</h1>
 
-      <p *ngIf="false" class="description">Here are some links to my other websites and applications. Click on any of them to explore!</p>
+      @if (false) {
+        <p class="description">Here are some links to my other websites and applications. Click on any of them to explore!</p>
+      }
 
       <div class="social-links-container">
         <div class="social-links-row">
@@ -44,67 +46,77 @@
 
       <div class="links-section">
         <ul class="list-group">
-          <div *ngIf="this.selectedMode === 'Personal'">
-            <li class="list-group-item"
-                *ngFor="let app of this.applications"
-                (click)="this.toggleDescription(app, $event)"
-                [class.expanded]="this.selectedApp === app"
-            >
-
-              <div class="item-header">
-                <div class="item-header-container">
-                  <a *ngIf="app.github" [href]="app.github" class="social-link-item" target="_blank" rel="noopener noreferrer" title="View GitHub repository">
-                    <i class="fab fa-github item-header-social-link"></i>
-                  </a>
-                  <a class="item-name" [href]="app.link" target="_blank">{{ app.name }}</a>
-                </div>
-                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </div>
-
-              <p *ngIf="this.selectedApp === app && app.description" class="description">
-                {{ app.description }}
-              </p>
-            </li>
-          </div>
-
-          <div *ngIf="this.selectedMode === 'Professional'">
-            <li class="list-group-company"
-                *ngFor="let company of this.professionalApplications"
-            >
-              <p class="company-title">{{ company.name}}</p>
-              <div class="company">
+          @if (this.selectedMode === 'Personal') {
+            <div>
+              @for (app of this.applications; track app) {
                 <li class="list-group-item"
-                    *ngFor="let app of company.projects"
-                    (click)="this.toggleCompanyDescription(app, company, $event)"
-                    [class.expanded]="this.selectedCompany === company && this.selectedApp === app"
-                >
+                  (click)="this.toggleDescription(app, $event)"
+                  [class.expanded]="this.selectedApp === app"
+                  >
                   <div class="item-header">
-                    <a
-                      *ngIf="app.link && app.link !== ''"
-                      [href]="app.link"
-                      target="_blank"
-                      class="item-name"
-                    >{{ app.name }}</a>
-                    <p
-                      *ngIf="app.link === null || app.link === undefined || app.link === ''"
-                      class="item-name"
-                    >{{ app.name }}</p>
+                    <div class="item-header-container">
+                      @if (app.github) {
+                        <a [href]="app.github" class="social-link-item" target="_blank" rel="noopener noreferrer" title="View GitHub repository">
+                          <i class="fab fa-github item-header-social-link"></i>
+                        </a>
+                      }
+                      <a class="item-name" [href]="app.link" target="_blank">{{ app.name }}</a>
+                    </div>
                     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </div>
-
-                  <p *ngIf="this.selectedCompany === company && this.selectedApp === app && this.selectedApp?.description" class="description medium-font">
-                    {{ this.selectedApp.description }}
-                  </p>
-
+                  @if (this.selectedApp === app && app.description) {
+                    <p class="description">
+                      {{ app.description }}
+                    </p>
+                  }
                 </li>
+              }
+            </div>
+          }
 
-              </div>
-            </li>
-          </div>
+          @if (this.selectedMode === 'Professional') {
+            <div>
+              @for (company of this.professionalApplications; track company) {
+                <li class="list-group-company"
+                  >
+                  <p class="company-title">{{ company.name}}</p>
+                  <div class="company">
+                    @for (app of company.projects; track app) {
+                      <li class="list-group-item"
+                        (click)="this.toggleCompanyDescription(app, company, $event)"
+                        [class.expanded]="this.selectedCompany === company && this.selectedApp === app"
+                        >
+                        <div class="item-header">
+                          @if (app.link && app.link !== '') {
+                            <a
+                              [href]="app.link"
+                              target="_blank"
+                              class="item-name"
+                            >{{ app.name }}</a>
+                          }
+                          @if (app.link === null || app.link === undefined || app.link === '') {
+                            <p
+                              class="item-name"
+                            >{{ app.name }}</p>
+                          }
+                          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </div>
+                        @if (this.selectedCompany === company && this.selectedApp === app && this.selectedApp?.description) {
+                          <p class="description medium-font">
+                            {{ this.selectedApp.description }}
+                          </p>
+                        }
+                      </li>
+                    }
+                  </div>
+                </li>
+              }
+            </div>
+          }
 
         </ul>
       </div>

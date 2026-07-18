@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { CommonModule, Location } from "@angular/common";
+import { Location } from "@angular/common";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 interface Project {
@@ -18,10 +18,9 @@ interface Company {
 @Component({
     selector: 'app-root',
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        RouterOutlet
-    ],
+    ReactiveFormsModule,
+    RouterOutlet
+],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
