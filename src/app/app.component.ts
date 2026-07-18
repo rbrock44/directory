@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Location } from "@angular/common";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ interface Company {
     RouterOutlet
 ],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
