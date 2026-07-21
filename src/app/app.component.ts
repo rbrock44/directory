@@ -68,6 +68,12 @@ export class AppComponent implements OnInit {
       description: 'A user friendly place to turn a recipe into JSON format for the family recipe website'
     },
     {
+      name: 'Puzzles',
+      link: this.createLink('puzzles'),
+      github: this.createGithub('puzzles'),
+      description: `A place to see and solve the various puzzles I've ran across and implemented`
+    },
+    {
       name: 'Utilities',
       link: this.createLink('utilities'),
       github: this.createGithub('utilities'),
