@@ -128,12 +128,6 @@ export class AppComponent implements OnInit {
       description: 'Helps manage an in person silent auction'
     },
     {
-      name: 'Email Link Generator',
-      link: this.createLink('email-link-generator'),
-      github: this.createGithub('email-link-generator'),
-      description: 'Helps create email links with parameters (fields)'
-    },
-    {
       name: 'Lost?',
       link: this.createLink('lost'),
       github: this.createGithub('lost'),
