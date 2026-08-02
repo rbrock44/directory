@@ -22,21 +22,15 @@ main.main {
   }
 }
 
-/* Container card */
 .container {
-  width: 100%;
-  max-width: 450px;
+  width: fit-content;
+  max-width: 100%;
   padding: var(--spacing-xl);
   background-color: var(--color-bg-secondary);
   border-radius: var(--radius-2xl);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-lg);
   transition: box-shadow var(--transition-base);
-
-  @media screen and (max-width: 768px) {
-    max-width: 100%;
-    padding: var(--spacing-xl);
-  }
 
   &:hover {
     box-shadow: var(--shadow-xl);
@@ -62,10 +56,6 @@ main.main {
   white-space: pre-line;
   margin-top: var(--spacing-md);
   margin-bottom: 0;
-}
-
-.medium-font {
-  font-size: var(--text-base);
 }
 
 /* Social links section */
@@ -207,7 +197,7 @@ input:checked+.slider:before {
 
 .list-group-item {
   margin-top: var(--spacing-sm);
-  padding: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
 
   &:hover {
     border-color: var(--color-accent-primary);
@@ -226,7 +216,7 @@ input:checked+.slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
 }
 
 .item-header-container {
@@ -238,6 +228,7 @@ input:checked+.slider:before {
 }
 
 .item-name {
+  margin: 0;
   color: var(--color-text-primary);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
@@ -247,6 +238,30 @@ input:checked+.slider:before {
   &:hover {
     color: var(--color-accent-primary);
   }
+}
+
+/* Real links get an accent color and an external-link mark so they read as
+   navigable, distinct from rows that only expand/collapse. */
+a.item-name {
+  color: var(--color-accent-primary);
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  &::after {
+    content: '\2197';
+    display: inline-block;
+    margin-left: 0.3em;
+    font-size: 0.75em;
+    opacity: 0.7;
+    transform: translateY(-0.05em);
+  }
+}
+
+p.item-name:hover {
+  color: var(--color-text-primary);
 }
 
 .social-link-item {
@@ -284,6 +299,20 @@ input:checked+.slider:before {
   color: var(--color-accent-primary);
 }
 
+/* Cap description height so long write-ups scroll instead of ballooning the row.
+   contain: inline-size keeps its unwrapped text width from feeding back into the
+   card's fit-content sizing, so opening one doesn't widen the whole card. */
+.list-group-item .description {
+  max-height: 260px;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  contain: inline-size;
+  padding-top: var(--spacing-sm);
+  padding-right: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-divider);
+}
+
 /* Company styling */
 .list-group-company {
   padding: var(--spacing-lg);
@@ -300,25 +329,14 @@ input:checked+.slider:before {
   font-size: var(--text-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
   margin-top: 0;
 }
 
 .company {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
   margin-left: var(--spacing-md);
-}
-
-.company .list-group-item {
-  padding: var(--spacing-md);
-  background-color: var(--color-bg-secondary);
-
-  &:hover {
-    border-color: var(--color-accent-secondary);
-    background-color: var(--color-bg-tertiary);
-  }
 }
 
 /* Responsive adjustments */
@@ -365,5 +383,9 @@ input:checked+.slider:before {
 
   .item-header {
     flex-wrap: wrap;
+  }
+
+  .list-group-item .description {
+    max-height: 220px;
   }
 }
