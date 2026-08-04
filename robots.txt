@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://directory.ryan-brock.com/sitemap.xml
