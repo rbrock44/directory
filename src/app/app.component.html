@@ -51,7 +51,13 @@
               @for (app of this.applications; track app) {
                 <li class="list-group-item"
                   (click)="this.toggleDescription(app, $event)"
+                  (keydown.enter)="this.toggleDescription(app, $event)"
+                  (keydown.space)="$event.preventDefault(); this.toggleDescription(app, $event)"
                   [class.expanded]="this.selectedApp === app"
+                  role="button"
+                  tabindex="0"
+                  [attr.aria-expanded]="this.selectedApp === app"
+                  [attr.aria-label]="'Toggle description for ' + app.name"
                   >
                   <div class="item-header">
                     <div class="item-header-container">
@@ -86,7 +92,13 @@
                     @for (app of company.projects; track app) {
                       <li class="list-group-item"
                         (click)="this.toggleCompanyDescription(app, company, $event)"
+                        (keydown.enter)="this.toggleCompanyDescription(app, company, $event)"
+                        (keydown.space)="$event.preventDefault(); this.toggleCompanyDescription(app, company, $event)"
                         [class.expanded]="this.selectedCompany === company && this.selectedApp === app"
+                        role="button"
+                        tabindex="0"
+                        [attr.aria-expanded]="this.selectedCompany === company && this.selectedApp === app"
+                        [attr.aria-label]="'Toggle description for ' + app.name"
                         >
                         <div class="item-header">
                           @if (app.link && app.link !== '') {
