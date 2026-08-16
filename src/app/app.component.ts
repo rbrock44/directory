@@ -45,6 +45,12 @@ export class AppComponent implements OnInit {
       description: 'Quick access to information Ryan wants'
     },
     {
+      name: 'Blog',
+      link: this.createLink('blog'),
+      github: this.createGithub('blog'),
+      description: 'Writing about how these projects were put together and why'
+    },
+    {
       name: 'Woodworking Projects',
       link: this.createLink('woodworking-projects'),
       github: this.createGithub('woodworking-projects'),
