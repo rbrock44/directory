@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { Location } from "@angular/common";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -213,31 +213,42 @@ export class AppComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private location: Location,
-    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const modeParam = params[this.modeUrlParam];
+    this.startMode = this.readModeFromUrl();
 
-      if (modeParam === 'Professional') {
-        this.startMode = false;
-      }
-
-      this.modeForm = this.fb.group({
-        mode: [this.startMode] // true = Personal, false = Professional
-      });
-
-      this.subscribeToModeForm();
+    this.modeForm = this.fb.group({
+      mode: [this.startMode] // true = Personal, false = Professional
     });
+
+    this.subscribeToModeForm();
+
+    // Browser/mouse back and forward land here; show whichever mode the URL now names.
+    this.location.subscribe(() => {
+      this.selectedApp = undefined;
+      this.selectedCompany = undefined;
+      this.modeForm.get('mode')?.setValue(this.readModeFromUrl(), { emitEvent: false });
+    });
+
+    // Slot a Personal entry in underneath a Professional deep link so back lands on Personal.
+    if (!this.startMode) {
+      this.location.replaceState(this.buildUrl(true));
+      this.location.go(this.buildUrl(false));
+    }
   }
 
   subscribeToModeForm(): void {
     this.modeForm.get('mode')?.valueChanges.subscribe((mode: boolean) => {
       this.selectedApp = undefined;
       this.selectedCompany = undefined;
-      this.location.replaceState(this.buildUrl(mode));
+      this.location.go(this.buildUrl(mode));
     });
+  }
+
+  private readModeFromUrl(): boolean {
+    const query = this.location.path().split('?')[1] ?? '';
+    return new URLSearchParams(query).get(this.modeUrlParam) !== 'Professional';
   }
 
   get selectedMode() {
@@ -285,8 +296,8 @@ export class AppComponent implements OnInit {
   private buildUrl(mode: boolean): string {
     const queryParams = new URLSearchParams();
 
-    if (this.selectedMode !== null && this.selectedMode !== 'Personal') {
-      queryParams.set(this.modeUrlParam, this.selectedMode);
+    if (!mode) {
+      queryParams.set(this.modeUrlParam, 'Professional');
     }
 
     const end = queryParams.toString();
