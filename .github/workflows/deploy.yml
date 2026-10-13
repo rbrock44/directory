@@ -25,9 +25,6 @@ jobs:
     - name: Run Tests
       run: npx ng test --watch=false --browsers=ChromeHeadless
 
-    - name: Configure npm Authentication
-      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-
     - name: Build Project
       run: npm run deploy
 
