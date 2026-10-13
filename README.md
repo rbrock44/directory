@@ -27,7 +27,7 @@ Screenshots:
 
 ## 🧠 What's My Purpose?
 
-This is a server side single-page angular frontend created to host links and descriptions to the other software creations I've made. It was inspired by zuul - which is a backend directory for microservice management
+This is a prerendered single-page angular frontend created to host links and descriptions to the other software creations I've made. It was inspired by zuul - which is a backend directory for microservice management
 
 ---
 
