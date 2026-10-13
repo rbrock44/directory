@@ -87,7 +87,13 @@
               @for (company of this.professionalApplications; track company) {
                 <li class="list-group-company"
                   >
-                  <p class="company-title">{{ company.name}}</p>
+                  <p class="company-title">
+                    @if (company.link) {
+                      <a class="company-link" [href]="company.link" target="_blank" rel="noopener noreferrer">{{ company.name }}</a>
+                    } @else {
+                      {{ company.name }}
+                    }
+                  </p>
                   <div class="company">
                     @for (app of company.projects; track app) {
                       <li class="list-group-item"

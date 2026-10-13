@@ -12,6 +12,7 @@ interface Project {
 
 interface Company {
   name: string;
+  link?: string;
   projects: Project[];
 }
 
@@ -144,6 +145,7 @@ export class AppComponent implements OnInit {
   professionalApplications: Company[] = [
     {
       name: 'Emerson',
+      link: 'https://www.emerson.com/en/corporate',
       projects: [
         {
           name: 'ValveLinkPro',
@@ -153,6 +155,7 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'PGT Solutions',
+      link: 'https://pgtsolutions.com/',
       projects: [
         {
           name: 'Veteran Disability Questionnaire Forms',
@@ -162,6 +165,7 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'GlobalSpec LLC',
+      link: 'https://www.globalspec.com/',
       projects: [
         {
           name: 'Product Search Replacement',
@@ -181,6 +185,7 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'Vizient Inc.',
+      link: 'https://www.vizient.com/',
       projects: [
         {
           name: 'Ginyu Force',
@@ -198,6 +203,7 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'Toyoda Gosei North America',
+      link: 'https://www.toyodagosei.com/',
       projects: [
         {
           name: 'Toyota Shipping Confirmation System',

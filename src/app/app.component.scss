@@ -242,7 +242,8 @@ input:checked+.slider:before {
 
 /* Real links get an accent color and an external-link mark so they read as
    navigable, distinct from rows that only expand/collapse. */
-a.item-name {
+a.item-name,
+.company-link {
   color: var(--color-accent-primary);
 
   &:hover {
@@ -337,6 +338,10 @@ p.item-name:hover {
   color: var(--color-text-primary);
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.company-link {
+  text-decoration: none;
 }
 
 .company {
