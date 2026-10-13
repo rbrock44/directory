@@ -31,6 +31,14 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Ryan\'s Website Directory');
   });
 
+  it('should give the mode switch an accessible name', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const input = (fixture.nativeElement as HTMLElement).querySelector('.switch input') as HTMLInputElement;
+    expect(input.getAttribute('role')).toBe('switch');
+    expect(input.getAttribute('aria-label')).toBe('Show personal projects');
+  });
+
   it('should toggle a description from its button but not from its links', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
