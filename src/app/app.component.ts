@@ -143,6 +143,10 @@ export class AppComponent implements OnInit {
 
   professionalApplications: Company[] = [
     {
+      name: 'Emerson',
+      projects: []
+    },
+    {
       name: 'PGT Solutions',
       projects: [
         {
