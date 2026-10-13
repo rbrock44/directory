@@ -31,6 +31,24 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Ryan\'s Website Directory');
   });
 
+  it('should toggle a description from its button but not from its links', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const item = compiled.querySelector('.list-group-item') as HTMLElement;
+    const toggle = item.querySelector('button.toggle') as HTMLButtonElement;
+
+    item.querySelector('a.item-name')!.addEventListener('click', (e) => e.preventDefault());
+    (item.querySelector('a.item-name') as HTMLElement).click();
+    fixture.detectChanges();
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+
+    toggle.click();
+    fixture.detectChanges();
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(item.querySelector('.description')).toBeTruthy();
+  });
+
   it('should push a history entry when switching mode and go back on popstate', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;

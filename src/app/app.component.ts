@@ -279,9 +279,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleDescription(app: any, event: Event) {
-    const target = event.target as HTMLElement;
-
-    if (target.tagName === 'A' || target.tagName === 'I') {
+    if ((event.target as HTMLElement).closest('a')) {
       return;
     }
 
@@ -293,9 +291,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleCompanyDescription(app: any, company: any, event: Event) {
-    const target = event.target as HTMLElement;
-
-    if (target.tagName === 'A') {
+    if ((event.target as HTMLElement).closest('a')) {
       return;
     }
 

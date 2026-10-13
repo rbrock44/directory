@@ -285,6 +285,20 @@ p.item-name:hover {
   font-size: var(--text-lg);
 }
 
+.toggle {
+  display: flex;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+  }
+}
+
 /* Arrow animation */
 .arrow {
   flex-shrink: 0;
