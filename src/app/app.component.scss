@@ -42,20 +42,26 @@ main.main {
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-bold);
   text-align: center;
-  color: var(--color-text-primary);
   margin-bottom: var(--spacing-2xl);
-  font-family: var(--font-family-display);
-  letter-spacing: -0.02em;
 }
 
-/* Description text */
+/* Description text. Capped height so long write-ups scroll instead of ballooning the row.
+   contain: inline-size keeps its unwrapped text width from feeding back into the
+   card's fit-content sizing, so opening one doesn't widen the whole card. */
 .description {
   color: var(--color-text-secondary);
   font-size: var(--text-sm);
   line-height: 1.8;
   white-space: pre-line;
-  margin-top: var(--spacing-md);
   margin-bottom: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  contain: inline-size;
+  padding-top: var(--spacing-sm);
+  padding-right: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-divider);
 }
 
 .icon {
@@ -103,9 +109,7 @@ main.main {
   }
 
   .link-text {
-    font-size: var(--text-sm);
     display: none;
-    font-weight: var(--font-weight-medium);
   }
 }
 
@@ -121,7 +125,6 @@ main.main {
 
 .mode {
   min-width: 145px;
-  font-size: var(--text-base);
   white-space: nowrap;
   line-height: 1;
   color: var(--color-text-primary);
@@ -145,10 +148,7 @@ main.main {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: var(--color-bg-hover);
   transition: background-color var(--transition-base);
   border-radius: 28px;
@@ -242,12 +242,7 @@ input:checked+.slider:before {
   color: var(--color-text-primary);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  transition: color var(--transition-fast);
   word-break: break-word;
-
-  &:hover {
-    color: var(--color-accent-primary);
-  }
 }
 
 /* Real links get an accent color and an external-link mark so they read as
@@ -255,6 +250,7 @@ input:checked+.slider:before {
 a.item-name,
 .company-link {
   color: var(--color-accent-primary);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -269,10 +265,6 @@ a.item-name,
     opacity: 0.7;
     transform: translateY(-0.05em);
   }
-}
-
-p.item-name:hover {
-  color: var(--color-text-primary);
 }
 
 .social-link-item {
@@ -316,26 +308,11 @@ p.item-name:hover {
   height: 24px;
   color: var(--color-text-secondary);
   transition: transform var(--transition-base);
-  stroke-width: 2;
 }
 
 .list-group-item.expanded .arrow {
   transform: rotate(180deg);
   color: var(--color-accent-primary);
-}
-
-/* Cap description height so long write-ups scroll instead of ballooning the row.
-   contain: inline-size keeps its unwrapped text width from feeding back into the
-   card's fit-content sizing, so opening one doesn't widen the whole card. */
-.list-group-item .description {
-  max-height: 260px;
-  overflow-y: auto;
-  overflow-wrap: anywhere;
-  contain: inline-size;
-  padding-top: var(--spacing-sm);
-  padding-right: var(--spacing-xs);
-  margin-top: var(--spacing-sm);
-  border-top: 1px solid var(--color-divider);
 }
 
 .project-list {
@@ -346,7 +323,6 @@ p.item-name:hover {
 .list-group-company {
   padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-md);
   background-color: rgba(59, 130, 246, 0.05);
-  border-color: var(--color-border);
 
   &:hover {
     border-color: var(--color-accent-primary);
@@ -358,12 +334,7 @@ p.item-name:hover {
   font-size: var(--text-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.company-link {
-  text-decoration: none;
+  margin: 0;
 }
 
 .company {
@@ -395,10 +366,6 @@ p.item-name:hover {
 
   .social-link {
     padding: var(--spacing-sm);
-
-    .link-text {
-      display: none;
-    }
   }
 
   .toggle-container {
@@ -420,7 +387,7 @@ p.item-name:hover {
     flex-wrap: wrap;
   }
 
-  .list-group-item .description {
+  .description {
     max-height: 220px;
   }
 }
