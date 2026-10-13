@@ -144,7 +144,12 @@ export class AppComponent implements OnInit {
   professionalApplications: Company[] = [
     {
       name: 'Emerson',
-      projects: []
+      projects: [
+        {
+          name: 'ValveLinkPro',
+          description: `I work on ValveLinkPro, a desktop application built with .NET and React.\n\nThe factory uses it to set up our Digital Valve Controllers (DVCs), and field technicians use it to diagnose them.\n\nIt also does predictive maintenance, flagging when a valve needs service or is likely to fail before it does.`
+        }
+      ]
     },
     {
       name: 'PGT Solutions',
