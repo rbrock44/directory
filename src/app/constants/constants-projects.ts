@@ -23,11 +23,6 @@ export const PERSONAL_PROJECTS: Project[] = [
     github: createGithub('woodworking-projects'),
     description: 'Shows off the woodworking projects'
   },
-  // {
-  //   name: 'Drive Status',
-  //   link: createLink('drive-status'),
-  //   description: 'OpenMediaVault drive connection statuses'
-  // },
   {
     name: 'Family Recipes',
     link: createLink('family-recipes'),

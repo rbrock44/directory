@@ -58,6 +58,11 @@ main.main {
   margin-bottom: 0;
 }
 
+.icon {
+  height: 1em;
+  width: auto;
+}
+
 /* Social links section */
 .social-links-container {
   width: 100%;
@@ -93,7 +98,7 @@ main.main {
     box-shadow: var(--shadow-md);
   }
 
-  i {
+  .icon {
     font-size: var(--text-xl);
   }
 
