@@ -94,7 +94,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ### Deploy
 
-Run `npm run prod` to build and deploy the project. Make sure to be on `master` and that it is up to date before running the command. It's really meant to be a CI/CD action
+Deploys run in CI on push to `master` (see `.github/workflows/deploy.yml`). `npm run deploy` runs the same build locally
 
 ---
 
