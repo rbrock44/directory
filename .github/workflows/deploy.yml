@@ -28,10 +28,6 @@ jobs:
     - name: Build Project
       run: npm run deploy
 
-    - name: Add CNAME
-      run: |
-        cp CNAME ./dist/directory/browser/CNAME
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
