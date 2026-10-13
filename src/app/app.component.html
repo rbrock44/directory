@@ -45,9 +45,8 @@
       </div>
 
       <div class="links-section">
-        <ul class="list-group">
           @if (this.selectedMode === 'Personal') {
-            <div>
+            <ul class="list-group project-list">
               @for (app of this.applications; track app) {
                 <li class="list-group-item"
                   (click)="this.toggleDescription(app, $event)"
@@ -79,11 +78,11 @@
                   }
                 </li>
               }
-            </div>
+            </ul>
           }
 
           @if (this.selectedMode === 'Professional') {
-            <div class="company-list">
+            <ul class="list-group">
               @for (company of this.professionalApplications; track company) {
                 <li class="list-group-company"
                   >
@@ -94,7 +93,7 @@
                       {{ company.name }}
                     }
                   </p>
-                  <div class="company">
+                  <ul class="company">
                     @for (app of company.projects; track app) {
                       <li class="list-group-item"
                         (click)="this.toggleCompanyDescription(app, company, $event)"
@@ -130,13 +129,12 @@
                         }
                       </li>
                     }
-                  </div>
+                  </ul>
                 </li>
               }
-            </div>
+            </ul>
           }
 
-        </ul>
       </div>
 
     </div>
