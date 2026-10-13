@@ -6,7 +6,7 @@
 Screenshots:
 ![preview](/screenshots/main.png)
 ![expanded preview](/screenshots/expanded.png)
-![professional preview](/screenshots/profressional.png)
+![professional preview](/screenshots/professional.png)
 
 ---
 
@@ -33,8 +33,8 @@ This is a server side single-page angular frontend created to host links and des
 
 ## 🚦 How to Use
 
-- `Social Banner` - At the top is a social banner containing buttons that link to my Github, Linked, and BuyMeACoffee
-- `Project Slider` - This slider swaps between `Personal` and `Profressional` projects
+- `Social Banner` - At the top is a social banner containing buttons that link to my Github, LinkedIn, and BuyMeACoffee
+- `Project Slider` - This slider swaps between `Personal` and `Professional` projects
 - `Project` - Each project has the following properties
     - (Only `Personal`) Github Readme Link
     - Name (also a link to website, if available)
@@ -43,13 +43,13 @@ This is a server side single-page angular frontend created to host links and des
 Screenshots:
 ![preview](/screenshots/main.png)
 ![expanded preview](/screenshots/expanded.png)
-![professional preview](/screenshots/profressional.png)
+![professional preview](/screenshots/professional.png)
 
 ---
 
 ## 🛠 Technologies
 
-- Framework: `Angular 18`
+- Framework: `Angular 22`
 - Testing: `Karma`
 - Deployment: `GitHub Pages`
 
@@ -57,7 +57,7 @@ Screenshots:
 
 ## 🚀 Getting Started (Local Setup)
 
-* Install [node](https://nodejs.org/en) - v18 is needed (v20 also works)
+* Install [node](https://nodejs.org/en) - v24 (see `.nvmrc`)
 * Clone [repo](https://github.com/rbrock44/directory)
 
 ---
@@ -75,16 +75,14 @@ npm start
 
 - Unit
     - `ng test` || `npm run test`
-- Integration
-    - `ng e2e` || `npm run e2e`
 
 ---
 
 ### Github Hooks
 
 - Build
-    - Trigger: On Push to Main
-    - Action(s): Builds application then kicks off gh page action to deploy build output
+    - Trigger: On Push to `master`
+    - Action(s): Runs tests, builds application, then kicks off gh page action to deploy build output
 
 ---
 
