@@ -78,9 +78,9 @@ export const PERSONAL_PROJECTS: Project[] = [
     description: 'Helps manage a game where teams/players keep score over multiple rounds. This was created for a non profit organization to manage their Trivia night instead of using excel'
   },
   {
-    name: 'Craft Showcase',
+    name: 'Craft Showcase (Sample)',
     link: createLink('craft-showcase'),
-    description: 'A gallery for makers to showcase their work by year and project, with featured and favorite pieces. One codebase serves many makers\' sites, each with their own gallery, like K&L Crafts for hand-drawn pictures'
+    description: 'A gallery for makers to showcase their work by year and project, with featured and favorite pieces'
   },
   {
     name: 'Enderle Cattle Co',

@@ -283,6 +283,10 @@ a.item-name,
   }
 }
 
+.social-link-placeholder {
+  visibility: hidden;
+}
+
 .item-header-social-link {
   font-size: var(--text-lg);
 }
