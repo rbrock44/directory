@@ -101,6 +101,12 @@ export const PERSONAL_PROJECTS: Project[] = [
     description: 'Helps manage an in person silent auction'
   },
   {
+    name: 'Retro Board',
+    link: createLink('retro'),
+    github: createGithub('retro-board'),
+    description: 'Demo of a self-hosted retro board for teams to add, vote on and carry over items'
+  },
+  {
     name: 'Lost?',
     link: createLink('lost'),
     github: createGithub('lost'),
